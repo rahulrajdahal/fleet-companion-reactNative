@@ -62,6 +62,8 @@ export const COLORS = {
 };
 
 export const SIZES = {
+  borderRadius: 10,
+
   // font sizes
   h1: 72,
   h2: 48,
