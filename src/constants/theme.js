@@ -59,6 +59,9 @@ export const COLORS = {
   text500: "#808692",
   text400: "#9A9FA8",
   text300: "#B4B7BE",
+
+  // colors
+  white: "#FFFFFF",
 };
 
 export const SIZES = {

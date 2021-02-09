@@ -1,3 +1,4 @@
 import Input from "./Input";
+import LargeButton from "./LargeButton";
 
-export { Input };
+export { LargeButton, Input };
