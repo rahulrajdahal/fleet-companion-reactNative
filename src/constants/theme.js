@@ -1,7 +1,7 @@
 import { Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
-import { Manrope_400Regular } from "constants/node_modules/@expo-google-fonts/manrope";
+import { Manrope } from "@expo-google-fonts/manrope";
 
 export const COLORS = {
   // base colors
@@ -81,37 +81,37 @@ export const SIZES = {
 
 export const FONTS = {
   h1: {
-    fontFamily: "Manrope_400Regular",
+    fontFamily: "Manrope",
     fontWeight: "600",
     fontSize: SIZES.h1,
     lineHeight: 72,
   },
   h2: {
-    fontFamily: "Manrope_400Regular",
+    fontFamily: "Manrope",
     fontWeight: "600",
     fontSize: SIZES.h2,
     lineHeight: 48,
   },
   h3: {
-    fontFamily: "Manrope_400Regular",
+    fontFamily: "Manrope",
     fontWeight: "600",
     fontSize: SIZES.h3,
     lineHeight: 40,
   },
   h4: {
-    fontFamily: "Manrope_400Regular",
+    fontFamily: "Manrope",
     fontWeight: "600",
     fontSize: SIZES.h4,
     lineHeight: 32,
   },
   h5: {
-    fontFamily: "Manrope_400Regular",
+    fontFamily: Manrope,
     fontWeight: "600",
     fontSize: SIZES.h5,
     lineHeight: 24,
   },
   h6: {
-    fontFamily: "Manrope_400Regular",
+    fontFamily: "Manrope",
     fontWeight: "600",
     fontSize: SIZES.h6,
     lineHeight: 20,
