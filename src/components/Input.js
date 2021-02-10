@@ -20,7 +20,17 @@ const Input = ({ text, placeholder, style }) => {
         ...style,
       }}
     >
-      <Text style={{ ...FONTS.body3 }}>{text}</Text>
+      <Text
+        style={{
+          fontFamily: "Manrope",
+          color: "#0E3150",
+          fontSize: 14,
+          fontWeight: "600",
+          lineHeight: 14,
+        }}
+      >
+        {text}
+      </Text>
       <View
         style={{
           width: 327,

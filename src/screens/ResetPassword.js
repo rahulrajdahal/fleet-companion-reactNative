@@ -1,10 +1,10 @@
 import React from "react";
-import { SafeAreaView, View, Text } from "react-native";
+import { View, Text } from "react-native";
 import { Input, LargeButton } from "../components";
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, SIZES, FONTS } from "../constants";
 import { Logo } from "../constants/icons";
 
-const ForgotPassword = ({ navigation }) => {
+const ResetPassword = ({ navigation }) => {
   function renderTitle() {
     return (
       <Text
@@ -15,7 +15,7 @@ const ForgotPassword = ({ navigation }) => {
           fontWeight: "bold",
         }}
       >
-        Forgot Password
+        Reset Password
       </Text>
     );
   }
@@ -31,8 +31,8 @@ const ForgotPassword = ({ navigation }) => {
           textAlign: "center",
         }}
       >
-        Please enter the email that you registered with and we will send you a
-        password reset link.
+        Create a strong password that you can remember for logging in from next
+        time.
       </Text>
     );
   }
@@ -40,9 +40,11 @@ const ForgotPassword = ({ navigation }) => {
   function renderInput() {
     return (
       <View style={{ marginTop: 60 }}>
+        <Input text="Create New Password" placeholder="***************" />
         <Input
-          text="Registered Email Address"
-          placeholder="fleetcompliance@gmail.com"
+          text="Confirm New Password"
+          placeholder="***************"
+          style={{ marginTop: 40 }}
         />
       </View>
     );
@@ -51,8 +53,8 @@ const ForgotPassword = ({ navigation }) => {
   function renderButton() {
     return (
       <LargeButton
-        onPress={() => navigation.navigate("ResetPassword")}
-        text="Send Password Reset Code"
+        onPress={() => console.log("Password Changed")}
+        text="Change Password"
         color={COLORS.success}
         textColor={COLORS.white}
         style={{
@@ -86,4 +88,4 @@ const ForgotPassword = ({ navigation }) => {
   );
 };
 
-export default ForgotPassword;
+export default ResetPassword;
