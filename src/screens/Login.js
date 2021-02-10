@@ -15,11 +15,9 @@ const Login = () => {
 
   function renderTitle() {
     return (
-      <View>
-        <Text style={{ marginTop: 12, color: COLORS.primary, ...FONTS.h5 }}>
-          Log In
-        </Text>
-      </View>
+      <Text style={{ marginTop: 12, color: COLORS.primary, ...FONTS.h5 }}>
+        Log In
+      </Text>
     );
   }
 
@@ -27,6 +25,10 @@ const Login = () => {
     return (
       <View
         style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
           marginTop: 80,
         }}
       >
@@ -43,55 +45,48 @@ const Login = () => {
   function renderButton() {
     return (
       <>
-        <View
-          style={{
-            marginTop: 48,
-          }}
-        >
-          <LargeButton
-            text="LogIn"
-            color={COLORS.success}
-            textColor={COLORS.white}
-          />
-        </View>
+        <LargeButton
+          onPress={() => console.log("LogIn")}
+          text="LogIn"
+          color={COLORS.success}
+          textColor={COLORS.white}
+          style={{ marginTop: 48 }}
+        />
 
-        <View
+        <LargeButton
+          onPress={() => console.log("Forgot Password")}
+          text="Forgot Password"
+          textColor={COLORS.success}
+          color={COLORS.white}
           style={{
             marginTop: 32,
+            marginBottom: 135,
           }}
-        >
-          <LargeButton
-            text="Fogot Password"
-            textColor={COLORS.success}
-            color={COLORS.white}
-          />
-        </View>
+        />
       </>
     );
   }
 
   return (
-    <SafeAreaView>
-      <View
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-around",
-          marginHorizontal: 24,
-          backgroundColor: COLORS.white,
-        }}
-      >
-        <Logo style={{ marginTop: 167 }} />
+    <View
+      style={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingHorizontal: 24,
+        backgroundColor: COLORS.white,
+      }}
+    >
+      <Logo style={{ marginTop: 167 }} />
 
-        {renderTitle()}
+      {renderTitle()}
 
-        {renderForm()}
+      {renderForm()}
 
-        {renderButton()}
-      </View>
-    </SafeAreaView>
+      {renderButton()}
+    </View>
   );
 };
 

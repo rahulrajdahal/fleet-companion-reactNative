@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import { FONTS, SIZES } from "../constants";
 
-const LargeButton = ({ color, textColor, text }) => {
+const LargeButton = ({ color, textColor, text, style, onPress }) => {
   return (
-    <View
+    <TouchableOpacity
+      onPress={onPress}
       style={{
         width: 327,
         height: 48,
@@ -12,10 +13,11 @@ const LargeButton = ({ color, textColor, text }) => {
         borderRadius: SIZES.borderRadius,
         alignItems: "center",
         justifyContent: "center",
+        ...style,
       }}
     >
       <Text style={{ color: textColor, ...FONTS.body3 }}>{text}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
