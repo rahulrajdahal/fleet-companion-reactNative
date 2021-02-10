@@ -5,17 +5,17 @@ import { Logo } from "../constants/icons";
 import { useForm } from "react-hook-form";
 import { Input, LargeButton } from "../components";
 
-const Login = () => {
-  const { handleSubmit, register, errors, setValue } = useForm();
-  const onSubmit = (values) => console.log(values);
-
-  useEffect(() => {
-    register("Mr.Driver");
-  }, [register]);
-
+const Login = ({ navigation }) => {
   function renderTitle() {
     return (
-      <Text style={{ marginTop: 12, color: COLORS.primary, ...FONTS.h5 }}>
+      <Text
+        style={{
+          marginTop: 12,
+          color: COLORS.primary,
+          ...FONTS.h5,
+          fontWeight: "bold",
+        }}
+      >
         Log In
       </Text>
     );
@@ -54,7 +54,7 @@ const Login = () => {
         />
 
         <LargeButton
-          onPress={() => console.log("Forgot Password")}
+          onPress={() => navigation.navigate("ForgotPassword")}
           text="Forgot Password"
           textColor={COLORS.success}
           color={COLORS.white}

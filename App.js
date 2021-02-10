@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
-import { Login } from "./src/screens";
+import { ForgotPassword, Login } from "./src/screens";
 
 const theme = {
   ...DefaultTheme,
@@ -22,6 +22,11 @@ const App = () => {
         initialRouteName={"Login"}
       >
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen
+          name="ForgotPassword"
+          component={ForgotPassword}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
