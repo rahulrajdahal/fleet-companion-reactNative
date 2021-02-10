@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { View, Text, TextInput, SafeAreaView } from "react-native";
-import { COLORS, FONTS, SIZES } from "../constants";
-import { Logo } from "../constants/icons";
+import { COLORS, FONTS, SIZES } from "../../constants";
+import { Logo } from "../../constants/icons";
 import { useForm } from "react-hook-form";
-import { Input, LargeButton } from "../components";
+import { Input, LargeButton } from "../../components";
 
 const Login = ({ navigation }) => {
   function renderTitle() {
@@ -46,7 +46,7 @@ const Login = ({ navigation }) => {
     return (
       <>
         <LargeButton
-          onPress={() => console.log("LogIn")}
+          onPress={() => navigation.navigate("Dashboard")}
           text="LogIn"
           color={COLORS.success}
           textColor={COLORS.white}

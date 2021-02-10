@@ -1,5 +1,6 @@
-import Login from "./Login";
-import ForgotPassword from "./ForgotPassword";
-import ResetPassword from "./ResetPassword";
+import Login from "./auth/Login";
+import ForgotPassword from "./auth/ForgotPassword";
+import ResetPassword from "./auth/ResetPassword";
+import Dashboard from "./Dashboard";
 
-export { Login, ForgotPassword, ResetPassword };
+export { Dashboard, Login, ForgotPassword, ResetPassword };

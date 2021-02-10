@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { Input, LargeButton } from "../components";
-import { COLORS, SIZES, FONTS } from "../constants";
-import { Logo } from "../constants/icons";
+import { SafeAreaView, View, Text } from "react-native";
+import { Input, LargeButton } from "../../components";
+import { COLORS, FONTS, SIZES } from "../../constants";
+import { Logo } from "../../constants/icons";
 
-const ResetPassword = ({ navigation }) => {
+const ForgotPassword = ({ navigation }) => {
   function renderTitle() {
     return (
       <Text
@@ -15,7 +15,7 @@ const ResetPassword = ({ navigation }) => {
           fontWeight: "bold",
         }}
       >
-        Reset Password
+        Forgot Password
       </Text>
     );
   }
@@ -31,8 +31,8 @@ const ResetPassword = ({ navigation }) => {
           textAlign: "center",
         }}
       >
-        Create a strong password that you can remember for logging in from next
-        time.
+        Please enter the email that you registered with and we will send you a
+        password reset link.
       </Text>
     );
   }
@@ -40,11 +40,9 @@ const ResetPassword = ({ navigation }) => {
   function renderInput() {
     return (
       <View style={{ marginTop: 60 }}>
-        <Input text="Create New Password" placeholder="***************" />
         <Input
-          text="Confirm New Password"
-          placeholder="***************"
-          style={{ marginTop: 40 }}
+          text="Registered Email Address"
+          placeholder="fleetcompliance@gmail.com"
         />
       </View>
     );
@@ -53,8 +51,8 @@ const ResetPassword = ({ navigation }) => {
   function renderButton() {
     return (
       <LargeButton
-        onPress={() => console.log("Password Changed")}
-        text="Change Password"
+        onPress={() => navigation.navigate("ResetPassword")}
+        text="Send Password Reset Code"
         color={COLORS.success}
         textColor={COLORS.white}
         style={{
@@ -88,4 +86,4 @@ const ResetPassword = ({ navigation }) => {
   );
 };
 
-export default ResetPassword;
+export default ForgotPassword;
