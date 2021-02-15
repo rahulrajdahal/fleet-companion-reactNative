@@ -1,4 +1,5 @@
 import Input from "./Input";
 import LargeButton from "./LargeButton";
+import TimeCard from "./TimeCard";
 
-export { LargeButton, Input };
+export { TimeCard, LargeButton, Input };
