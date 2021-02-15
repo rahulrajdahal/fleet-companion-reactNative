@@ -20,6 +20,7 @@ export const COLORS = {
   success500: "#71B488",
   success400: "#88C09B",
   success300: "#B8DAC4",
+  success200: "#D0E6D7",
 
   info900: "#04135B",
   info800: "#0F37A4",
