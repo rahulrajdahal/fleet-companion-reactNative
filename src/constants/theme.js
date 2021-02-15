@@ -38,6 +38,7 @@ export const COLORS = {
   warning500: "#F4B966",
   warning400: "#F5C47F",
   warning300: "#FADCB3",
+  warning200: "#FBE8CC",
 
   danger900: "#900C2F",
   danger800: "#AC112C",
