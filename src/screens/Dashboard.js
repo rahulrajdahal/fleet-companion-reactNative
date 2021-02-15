@@ -57,16 +57,22 @@ const Dashboard = () => {
       {
         _id: 1,
         name: "Open",
+        x: "Open",
+        y: 50,
         color: COLORS.info,
       },
       {
         _id: 2,
         name: "In Progress",
+        x: "In Progress",
+        y: 30,
         color: COLORS.info400,
       },
       {
         _id: 3,
         name: "Completed",
+        x: "Completed",
+        y: 20,
         color: COLORS.info300,
       },
     ];
@@ -100,18 +106,31 @@ const Dashboard = () => {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
           }}
         >
-          <Text>PieChart</Text>
+          <VictoryPie
+            data={data}
+            colorScale={data.map((item) => item.color)}
+            width={200}
+            height={190}
+            innerRadius={20}
+            style={{
+              labels: { fill: "none" },
+              parent: {
+                position: "absolute",
+                alignSelf: "center",
+                right: 41,
+                bottom: 32.68,
+              },
+            }}
+          />
           <View
             style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
               justifyContent: "space-evenly",
-              marginTop: 55,
-              marginBottom: 32.32,
+              marginBottom: 44,
             }}
           >
             {data.map((item) => (
