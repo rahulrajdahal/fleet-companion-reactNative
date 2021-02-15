@@ -7,7 +7,7 @@ const WorkCard = ({ inProgress }) => {
     <View
       style={{
         width: 327,
-        height: 132,
+        height: inProgress ? 132 : 106,
         backgroundColor: inProgress ? COLORS.warning200 : COLORS.success200,
         borderRadius: SIZES.borderRadius,
         marginTop: 16,
