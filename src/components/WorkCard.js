@@ -135,31 +135,33 @@ const WorkCard = ({ inProgress }) => {
         </Text>
       </View>
 
-      <View
-        style={{
-          width: 62,
-          height: 32,
-          backgroundColor: "#128239",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: SIZES.borderRadius,
-          position: "absolute",
-          bottom: 20,
-          right: 20,
-        }}
-      >
-        <Text
+      {inProgress ? null : (
+        <View
           style={{
-            color: COLORS.white,
-            fontFamily: "Inter",
-            fontSize: 12,
-            lineHeight: 12,
-            fontWeight: "600",
+            width: 62,
+            height: 32,
+            backgroundColor: "#128239",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: SIZES.borderRadius,
+            position: "absolute",
+            bottom: 20,
+            right: 20,
           }}
         >
-          Start
-        </Text>
-      </View>
+          <Text
+            style={{
+              color: COLORS.white,
+              fontFamily: "Inter",
+              fontSize: 12,
+              lineHeight: 12,
+              fontWeight: "600",
+            }}
+          >
+            Start
+          </Text>
+        </View>
+      )}
     </View>
   );
 };
