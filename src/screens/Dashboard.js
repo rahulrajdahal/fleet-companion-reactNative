@@ -1,12 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { VictoryPie } from "victory-native";
+import { TimeCard } from "../components";
 import { FONTS, COLORS, SIZES } from "../constants";
 import { Logo, Menu, Chat } from "../constants/icons";
 
 const Dashboard = () => {
-  const [selectedWorkProgress, setSelectedWorkProgress] = React.useState(null);
-
   function renderNavbar() {
     return (
       <View
@@ -164,45 +163,19 @@ const Dashboard = () => {
           justifyContent: "space-between",
         }}
       >
-        <View
-          style={{
-            width: 156,
-            height: 80,
-            backgroundColor: "rgba(237, 138, 0, 0.05)",
-            borderRadius: SIZES.borderRadius,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            padding: 20,
-          }}
-        >
-          <Text style={{ color: COLORS.text700, ...FONTS.caption }}>
-            This Week
-          </Text>
-          <Text style={{ marginTop: 8, color: COLORS.warning, ...FONTS.h6 }}>
-            08hr 15m
-          </Text>
-        </View>
+        <TimeCard
+          backgroundColor="rgba(237, 138, 0, 0.05)"
+          textColor={COLORS.warning}
+          caption="This Week"
+          body="08hr 15m"
+        />
         <View style={{ width: 15 }} />
-        <View
-          style={{
-            width: 156,
-            height: 80,
-            backgroundColor: "rgba(201, 24, 39, 0.05)",
-            borderRadius: SIZES.borderRadius,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            padding: 20,
-          }}
-        >
-          <Text style={{ color: COLORS.text700, ...FONTS.caption }}>
-            This Week
-          </Text>
-          <Text style={{ marginTop: 8, color: COLORS.danger, ...FONTS.h6 }}>
-            08hr 15m
-          </Text>
-        </View>
+        <TimeCard
+          backgroundColor="rgba(201, 24, 39, 0.05)"
+          textColor={COLORS.danger}
+          caption="This Month"
+          body="35hr 48m"
+        />
       </View>
     );
   }
