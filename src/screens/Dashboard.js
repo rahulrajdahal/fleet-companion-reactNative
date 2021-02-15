@@ -1,9 +1,15 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { VictoryPie } from "victory-native";
 import { TimeCard, WorkCard } from "../components";
 import { FONTS, COLORS, SIZES } from "../constants";
-import { Logo, Menu, Chat } from "../constants/icons";
+import { Logo, Menu, Chat, Plus } from "../constants/icons";
 
 const Dashboard = () => {
   function renderNavbar() {
@@ -191,6 +197,34 @@ const Dashboard = () => {
     );
   }
 
+  function renderFAB() {
+    return (
+      <TouchableOpacity
+        style={{
+          width: 56,
+          height: 56,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: COLORS.success,
+          borderRadius: 50,
+          position: "absolute",
+          right: 24,
+          bottom: 109,
+          elevation: 3,
+          shadowColor: "rgba(18, 130, 57, 0.3)",
+          shadowOffset: {
+            width: 15,
+            height: 50,
+          },
+          shadowRadius: 50,
+        }}
+        onPress={() => console.log("Add")}
+      >
+        <Plus />
+      </TouchableOpacity>
+    );
+  }
+
   return (
     <View
       style={{
@@ -216,6 +250,8 @@ const Dashboard = () => {
         {/* Work Card */}
         {renderWorkCard()}
       </ScrollView>
+      {/* Floating Action Button */}
+      {renderFAB()}
     </View>
   );
 };
