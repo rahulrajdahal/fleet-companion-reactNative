@@ -6,7 +6,13 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { VictoryPie } from "victory-native";
+import { BarChart } from "react-native-chart-kit";
+import {
+  VictoryBar,
+  VictoryChart,
+  VictoryPie,
+  VictoryTheme,
+} from "victory-native";
 import { TimeCard, WorkCard } from "../components";
 import { FONTS, COLORS, SIZES } from "../constants";
 import { Logo, Menu, Chat, Plus } from "../constants/icons";
@@ -93,6 +99,7 @@ const Dashboard = () => {
       >
         <Text
           style={{
+            color: COLORS.text800,
             fontFamily: "Manrope",
             fontSize: 16,
             lineHeight: 16,
@@ -112,7 +119,7 @@ const Dashboard = () => {
             data={data}
             colorScale={data.map((item) => item.color)}
             width={200}
-            height={190}
+            height={200}
             innerRadius={20}
             style={{
               labels: { fill: "none" },
@@ -162,6 +169,15 @@ const Dashboard = () => {
   }
 
   function renderBarChart() {
+    const barChartData = [
+      { label: "Jan", data: "500" },
+      { label: "Feb", data: "1k" },
+      { label: "Mar", data: "1.5K" },
+      { label: "Apr", data: "2K" },
+      { label: "May", data: "2.5K" },
+      { label: "Jun", data: "3K" },
+    ];
+
     return (
       <View
         style={{
@@ -170,10 +186,50 @@ const Dashboard = () => {
           backgroundColor: "rgba(18, 130, 57, 0.05)",
           borderRadius: SIZES.borderRadius,
           marginTop: 15,
-          padding: 20,
         }}
       >
-        <Text>BarChart</Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            paddingTop: 20,
+            paddingHorizontal: 20,
+          }}
+        >
+          <Text
+            style={{
+              color: COLORS.text800,
+              fontFamily: "Manrope",
+              fontWeight: "600",
+              fontSize: 16,
+              lineHeight: 16,
+            }}
+          >
+            Expenses
+          </Text>
+          <Text>Expenses</Text>
+        </View>
+        <VictoryChart
+          theme={VictoryTheme.material}
+          domainPadding={{ x: 20 }}
+          width={SIZES.width - 40}
+          height={SIZES.height * 0.25}
+        >
+          <VictoryBar
+            data={barChartData}
+            x="label"
+            y="data"
+            alignment="middle"
+            barWidth={SIZES.width * 0.05}
+            cornerRadius={5}
+            style={{
+              data: { fill: COLORS.success },
+              labels: { fill: "none" },
+            }}
+          />
+        </VictoryChart>
       </View>
     );
   }
