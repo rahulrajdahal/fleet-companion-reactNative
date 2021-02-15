@@ -1,8 +1,6 @@
 import { Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
-import { Manrope } from "@expo-google-fonts/manrope";
-
 export const COLORS = {
   // base colors
   primary900: "#071C39",
@@ -110,7 +108,7 @@ export const FONTS = {
     lineHeight: 32,
   },
   h5: {
-    fontFamily: Manrope,
+    fontFamily: "Manrope",
     fontWeight: "600",
     fontSize: SIZES.h5,
     lineHeight: 24,

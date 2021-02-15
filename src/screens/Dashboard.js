@@ -1,9 +1,12 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { COLORS } from "../constants";
+import { View, Text, StyleSheet } from "react-native";
+import { VictoryPie } from "victory-native";
+import { FONTS, COLORS, SIZES } from "../constants";
 import { Logo, Menu, Chat } from "../constants/icons";
 
 const Dashboard = () => {
+  const [selectedWorkProgress, setSelectedWorkProgress] = React.useState(null);
+
   function renderNavbar() {
     return (
       <View
@@ -44,6 +47,166 @@ const Dashboard = () => {
     );
   }
 
+  function renderPieChart() {
+    const data = [
+      {
+        _id: 1,
+        name: "Open",
+        color: COLORS.info,
+      },
+      {
+        _id: 2,
+        name: "In Progress",
+        color: COLORS.info400,
+      },
+      {
+        _id: 3,
+        name: "Completed",
+        color: COLORS.info300,
+      },
+    ];
+
+    return (
+      <View
+        style={{
+          marginTop: 32,
+          width: 327,
+          height: 177,
+          backgroundColor: "rgba(21, 72, 191, 0.05)",
+          borderRadius: SIZES.borderRadius,
+          paddingTop: 20,
+          paddingLeft: 16,
+          paddingRight: 52,
+          paddingBottom: 11.68,
+        }}
+      >
+        <Text
+          style={{
+            fontFamily: "Manrope",
+            fontSize: 16,
+            lineHeight: 16,
+            fontWeight: "600",
+          }}
+        >
+          Works
+        </Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text>PieChart</Text>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "space-evenly",
+              marginTop: 55,
+              marginBottom: 32.32,
+            }}
+          >
+            {data.map((item) => (
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <View
+                  style={{
+                    width: 14,
+                    height: 14,
+                    backgroundColor: item.color,
+                    borderRadius: SIZES.borderRadius / 2,
+                    marginRight: 6,
+                  }}
+                />
+                <Text>{item.name}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      </View>
+    );
+  }
+
+  function renderBarChart() {
+    return (
+      <View
+        style={{
+          width: 327,
+          height: 217,
+          backgroundColor: "rgba(18, 130, 57, 0.05)",
+          borderRadius: SIZES.borderRadius,
+          marginTop: 15,
+          padding: 20,
+        }}
+      >
+        <Text>BarChart</Text>
+      </View>
+    );
+  }
+
+  function renderTimeCard() {
+    return (
+      <View
+        style={{
+          marginTop: 15,
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <View
+          style={{
+            width: 156,
+            height: 80,
+            backgroundColor: "rgba(237, 138, 0, 0.05)",
+            borderRadius: SIZES.borderRadius,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            padding: 20,
+          }}
+        >
+          <Text style={{ color: COLORS.text700, ...FONTS.caption }}>
+            This Week
+          </Text>
+          <Text style={{ marginTop: 8, color: COLORS.warning, ...FONTS.h6 }}>
+            08hr 15m
+          </Text>
+        </View>
+        <View style={{ width: 15 }} />
+        <View
+          style={{
+            width: 156,
+            height: 80,
+            backgroundColor: "rgba(201, 24, 39, 0.05)",
+            borderRadius: SIZES.borderRadius,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            padding: 20,
+          }}
+        >
+          <Text style={{ color: COLORS.text700, ...FONTS.caption }}>
+            This Week
+          </Text>
+          <Text style={{ marginTop: 8, color: COLORS.danger, ...FONTS.h6 }}>
+            08hr 15m
+          </Text>
+        </View>
+      </View>
+    );
+  }
+
   return (
     <View
       style={{
@@ -56,7 +219,15 @@ const Dashboard = () => {
     >
       {/* Navbar  */}
       {renderNavbar()}
-      <Text>Dashboard</Text>
+
+      {/* PieChart */}
+      {renderPieChart()}
+
+      {/* BarChart */}
+      {renderBarChart()}
+
+      {/* Time Card */}
+      {renderTimeCard()}
     </View>
   );
 };
