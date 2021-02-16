@@ -1,11 +1,14 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { WorkCard } from "../components";
 import { COLORS } from "../constants";
 
 const ActiveWork = () => {
   return (
-    <View style={{ backgroundColor: COLORS.white }}>
-      <Text>Active Works</Text>
+    <View style={{ flex: 1, backgroundColor: COLORS.white }}>
+      <WorkCard />
+      <WorkCard inProgress />
+      <WorkCard />
     </View>
   );
 };

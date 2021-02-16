@@ -264,16 +264,6 @@ const Dashboard = () => {
     );
   }
 
-  function renderWorkCard() {
-    return (
-      <>
-        <WorkCard />
-        <WorkCard inProgress />
-        <WorkCard />
-      </>
-    );
-  }
-
   function renderFAB() {
     return (
       <TouchableOpacity
@@ -327,9 +317,7 @@ const Dashboard = () => {
         <View style={{ width: 327, marginTop: 11 }}>
           <TopTabNavigator />
         </View>
-
-        {/* Work Card */}
-        {renderWorkCard()}
+        
       </ScrollView>
       {/* Floating Action Button */}
       {renderFAB()}
