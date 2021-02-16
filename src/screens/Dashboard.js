@@ -426,7 +426,7 @@ const Dashboard = () => {
         {renderTimeCard()}
 
         <View style={{ width: 327 }}>
-          <TopTabNavigator />
+          <TopTabNavigator modalVisible={modalVisible} />
         </View>
       </ScrollView>
       {/* Floating Action Button */}

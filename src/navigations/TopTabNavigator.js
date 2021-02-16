@@ -7,23 +7,32 @@ import { Active } from "../constants/icons";
 
 const Tab = createMaterialTopTabNavigator();
 
-const TopTabNavigator = () => {
+const TopTabNavigator = ({ modalVisible }) => {
   return (
     <Tab.Navigator
       initialRouteName="ActiveWork"
       tabBarOptions={{
-        style: { elevation: 0 },
+        style: {
+          elevation: 0,
+          backgroundColor: modalVisible
+            ? "rgba(2, 14, 38, 0.15)"
+            : COLORS.white,
+        },
         activeTintColor: COLORS.text800,
         labelStyle: { ...FONTS.h6, textTransform: "capitalize" },
         inactiveTintColor: COLORS.text500,
         showIcon: true,
         iconStyle: { top: 34, left: 73 },
-        indicatorStyle: { backgroundColor: COLORS.white },
+        indicatorStyle: {
+          backgroundColor: modalVisible
+            ? "rgba(2, 14, 38, 0.15)"
+            : COLORS.white,
+        },
       }}
     >
       <Tab.Screen
         name="ActiveWork"
-        component={ActiveWork}
+        children={() => <ActiveWork modalVisible={modalVisible} />}
         options={{
           tabBarLabel: "Active Work",
           tabBarIcon: ({ focused }) => (focused ? <Active /> : null),
@@ -31,7 +40,7 @@ const TopTabNavigator = () => {
       />
       <Tab.Screen
         name="CompletedWork"
-        component={CompletedWork}
+        children={() => <CompletedWork modalVisible={modalVisible} />}
         options={{
           tabBarLabel: "Completed",
           tabBarIcon: ({ focused }) => (focused ? <Active /> : null),
