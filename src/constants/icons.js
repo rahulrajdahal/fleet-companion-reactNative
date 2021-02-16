@@ -7,8 +7,10 @@ import DashboardIcon from "../../assets/icons/dashboard.svg";
 import ReportIcon from "../../assets/icons/report.svg";
 import ExpenseIcon from "../../assets/icons/expenses.svg";
 import UserIcon from "../../assets/icons/user.svg";
+import ModalClose from "../../assets/icons/modalClose.svg";
 
 export {
+  ModalClose,
   ExpenseIcon,
   UserIcon,
   ReportIcon,

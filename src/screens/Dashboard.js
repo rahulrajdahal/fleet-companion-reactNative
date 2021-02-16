@@ -6,6 +6,8 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Modal,
+  Pressable,
 } from "react-native";
 import { BarChart } from "react-native-chart-kit";
 import {
@@ -16,10 +18,12 @@ import {
 } from "victory-native";
 import { TimeCard, WorkCard } from "../components";
 import { FONTS, COLORS, SIZES } from "../constants";
-import { Logo, Menu, Chat, Plus } from "../constants/icons";
+import { Logo, Menu, Chat, Plus, ModalClose } from "../constants/icons";
 import TopTabNavigator from "../navigations/TopTabNavigator";
 
 const Dashboard = () => {
+  const [modalVisible, setModalVisible] = React.useState(false);
+
   function renderNavbar() {
     return (
       <View
@@ -265,29 +269,134 @@ const Dashboard = () => {
 
   function renderFAB() {
     return (
-      <TouchableOpacity
-        style={{
-          width: 56,
-          height: 56,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: COLORS.success,
-          borderRadius: 50,
-          position: "absolute",
-          right: 24,
-          bottom: 24,
-          elevation: 3,
-          shadowColor: "rgba(18, 130, 57, 0.3)",
-          shadowOffset: {
-            width: 15,
-            height: 50,
-          },
-          shadowRadius: 50,
-        }}
-        onPress={() => console.log("Add")}
-      >
-        <Plus />
-      </TouchableOpacity>
+      <>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() =>
+            setModalVisible((modalVisible) => !modalVisible)
+          }
+        >
+          <View
+            style={{
+              width: 327,
+              height: 195,
+              backgroundColor: COLORS.white,
+              borderRadius: 20,
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              paddingHorizontal: 32,
+              paddingTop: 32,
+              paddingBottom: 23,
+              elevation: 5,
+              shadowColor: "rgba(0, 0, 0, 0.2)",
+              shadowOffset: {
+                width: 5,
+                height: 50,
+              },
+              shadowRadius: 50,
+            }}
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "Manrope",
+                  fontWeight: "600",
+                  fontSize: 16,
+                  lineHeight: 16,
+                  color: COLORS.text1000,
+                }}
+              >
+                Create Work
+              </Text>
+              <ModalClose
+                onPress={() => setModalVisible((modalVisible) => !modalVisible)}
+              />
+            </View>
+            <Text
+              style={{
+                marginTop: 12,
+                width: 239,
+                color: COLORS.text500,
+                ...FONTS.body3,
+                lineHeight: 20,
+              }}
+            >
+              You are about to create a new work. Are you sure?
+            </Text>
+
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginTop: 24,
+              }}
+            >
+              <Pressable
+                onPress={() => setModalVisible((modalVisible) => !modalVisible)}
+              >
+                <Text>Cancel</Text>
+              </Pressable>
+              <Pressable
+                style={{
+                  width: 181,
+                  height: 48,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: COLORS.success,
+                  borderRadius: SIZES.borderRadius,
+                }}
+                onPress={() => setModalVisible((modalVisible) => !modalVisible)}
+              >
+                <Text
+                  style={{
+                    color: COLORS.white,
+                    ...FONTS.body3,
+                    fontFamily: "Manrope",
+                    fontWeight: "600",
+                  }}
+                >
+                  Yes, Create Work
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
+        <TouchableOpacity
+          style={{
+            width: 56,
+            height: 56,
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: COLORS.success,
+            borderRadius: 50,
+            position: "absolute",
+            right: 24,
+            bottom: 24,
+            elevation: 3,
+            shadowColor: "rgba(18, 130, 57, 0.3)",
+            shadowOffset: {
+              width: 15,
+              height: 50,
+            },
+            shadowRadius: 50,
+          }}
+          onPress={() => setModalVisible(true)}
+        >
+          <Plus />
+        </TouchableOpacity>
+      </>
     );
   }
 
@@ -297,7 +406,7 @@ const Dashboard = () => {
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: COLORS.white,
+        backgroundColor: modalVisible ? "rgba(2, 14, 38, 0.15)" : COLORS.white,
         paddingHorizontal: 24,
       }}
     >
