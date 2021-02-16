@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { Dashboard, ForgotPassword, Login, ResetPassword } from "./src/screens";
+import { TopTabNavigator } from "./src/navigations/";
 
 const theme = {
   ...DefaultTheme,
@@ -35,6 +36,11 @@ const App = () => {
         <Stack.Screen
           name="Dashboard"
           component={Dashboard}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TopTabNavigator"
+          component={TopTabNavigator}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

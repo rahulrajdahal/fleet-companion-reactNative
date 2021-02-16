@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import {
   View,
@@ -16,6 +17,7 @@ import {
 import { TimeCard, WorkCard } from "../components";
 import { FONTS, COLORS, SIZES } from "../constants";
 import { Logo, Menu, Chat, Plus } from "../constants/icons";
+import TopTabNavigator from "../navigations/TopTabNavigator";
 
 const Dashboard = () => {
   function renderNavbar() {
@@ -321,6 +323,10 @@ const Dashboard = () => {
 
         {/* Time Card */}
         {renderTimeCard()}
+
+        <View style={{ width: 327, marginTop: 11 }}>
+          <TopTabNavigator />
+        </View>
 
         {/* Work Card */}
         {renderWorkCard()}
