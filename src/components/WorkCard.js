@@ -100,7 +100,6 @@ const WorkCard = ({ status }) => {
           </Text>
         </View>
       );
-    } else if (status == "scheduled") {
     } else if (status == "completed") {
       return (
         <>
@@ -167,6 +166,172 @@ const WorkCard = ({ status }) => {
       );
     }
     return;
+  }
+
+  function statusIndicator() {
+    if (status == "inProgress") {
+      return (
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            position: "absolute",
+            top: 21,
+            right: 20,
+            bottom: 102,
+          }}
+        >
+          <View
+            style={{
+              width: 8,
+              height: 8,
+              backgroundColor: "#E68A02",
+              borderRadius: SIZES.borderRadius,
+              marginRight: 4,
+            }}
+          />
+          <Text style={{ color: "#E68A02" }}>In Progress</Text>
+        </View>
+      );
+    } else if (status == "scheduled") {
+      return (
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            position: "absolute",
+            top: 21,
+            right: 20,
+            bottom: 102,
+          }}
+        >
+          <View
+            style={{
+              width: 8,
+              height: 8,
+              backgroundColor: COLORS.info,
+              borderRadius: SIZES.borderRadius,
+              marginRight: 4,
+            }}
+          />
+          <Text style={{ color: COLORS.info }}>Scheduled</Text>
+        </View>
+      );
+    } else if (status == "completed") {
+      return (
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            position: "absolute",
+            top: 20,
+            right: 20,
+          }}
+        >
+          <View
+            style={{
+              width: 8,
+              height: 8,
+              backgroundColor: COLORS.danger,
+              borderRadius: SIZES.borderRadius,
+              marginRight: 4,
+            }}
+          />
+          <Text style={{ color: COLORS.danger }}>Completed</Text>
+        </View>
+      );
+    }
+    return (
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          position: "absolute",
+          top: 21,
+          right: 20,
+          bottom: 102,
+        }}
+      >
+        <View
+          style={{
+            width: 8,
+            height: 8,
+            backgroundColor: COLORS.success,
+            borderRadius: SIZES.borderRadius,
+            marginRight: 4,
+          }}
+        />
+        <Text style={{ color: COLORS.success }}>Open</Text>
+      </View>
+    );
+  }
+
+  function startButton() {
+    if (status == "inProgress") {
+      return;
+    } else if (status == "scheduled") {
+      return (
+        <View
+          style={{
+            width: 62,
+            height: 32,
+            backgroundColor: COLORS.info,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: SIZES.borderRadius,
+            position: "absolute",
+            bottom: 20,
+            right: 20,
+          }}
+        >
+          <Text
+            style={{
+              color: COLORS.white,
+              fontFamily: "Inter",
+              fontSize: 12,
+              lineHeight: 12,
+              fontWeight: "600",
+            }}
+          >
+            Start
+          </Text>
+        </View>
+      );
+    } else if (status == "completed") {
+      return;
+    }
+
+    return (
+      <View
+        style={{
+          width: 62,
+          height: 32,
+          backgroundColor: COLORS.success,
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: SIZES.borderRadius,
+          position: "absolute",
+          bottom: 20,
+          right: 20,
+        }}
+      >
+        <Text
+          style={{
+            color: COLORS.white,
+            fontFamily: "Inter",
+            fontSize: 12,
+            lineHeight: 12,
+            fontWeight: "600",
+          }}
+        >
+          Start
+        </Text>
+      </View>
+    );
   }
 
   return (
@@ -237,58 +402,10 @@ const WorkCard = ({ status }) => {
 
         {cardInfo()}
       </View>
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          position: "absolute",
-          top: 21,
-          right: 20,
-          bottom: 102,
-        }}
-      >
-        <View
-          style={{
-            width: 8,
-            height: 8,
-            backgroundColor: status == "inProgress" ? "#E68A02" : "#128239",
-            borderRadius: SIZES.borderRadius,
-            marginRight: 4,
-          }}
-        />
-        <Text style={{ color: status == "inProgress" ? "#E68A02" : "#128239" }}>
-          {status == "inProgress" ? "In Progress" : "Open"}
-        </Text>
-      </View>
 
-      {status == "inProgress" ? null : (
-        <View
-          style={{
-            width: 62,
-            height: 32,
-            backgroundColor: "#128239",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: SIZES.borderRadius,
-            position: "absolute",
-            bottom: 20,
-            right: 20,
-          }}
-        >
-          <Text
-            style={{
-              color: COLORS.white,
-              fontFamily: "Inter",
-              fontSize: 12,
-              lineHeight: 12,
-              fontWeight: "600",
-            }}
-          >
-            Start
-          </Text>
-        </View>
-      )}
+      {statusIndicator()}
+
+      {startButton()}
     </View>
   );
 };
