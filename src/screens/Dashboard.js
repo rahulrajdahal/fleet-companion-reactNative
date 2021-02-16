@@ -275,7 +275,7 @@ const Dashboard = () => {
           borderRadius: 50,
           position: "absolute",
           right: 24,
-          bottom: 109,
+          bottom: 24,
           elevation: 3,
           shadowColor: "rgba(18, 130, 57, 0.3)",
           shadowOffset: {

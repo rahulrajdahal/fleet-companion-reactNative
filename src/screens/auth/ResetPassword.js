@@ -53,7 +53,7 @@ const ResetPassword = ({ navigation }) => {
   function renderButton() {
     return (
       <LargeButton
-        onPress={() => navigation.navigate("Dashboard")}
+        onPress={() => navigation.navigate("BottomNavTab")}
         text="Change Password"
         color={COLORS.success}
         textColor={COLORS.white}

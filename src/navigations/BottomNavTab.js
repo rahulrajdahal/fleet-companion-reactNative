@@ -13,6 +13,7 @@ const Tab = createBottomTabNavigator();
 
 const BottomNavTab = () => {
   const tabOptions = {
+    inactiveTintColor: COLORS.success400,
     labelStyle: {
       fontFamily: "Manrope",
       fontWeight: "600",

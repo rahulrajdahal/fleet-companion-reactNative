@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants";
 
 const WorkCard = ({ status }) => {
@@ -275,7 +275,8 @@ const WorkCard = ({ status }) => {
       return;
     } else if (status == "scheduled") {
       return (
-        <View
+        <TouchableOpacity
+          onPress={() => console.log("Start")}
           style={{
             width: 62,
             height: 32,
@@ -299,14 +300,15 @@ const WorkCard = ({ status }) => {
           >
             Start
           </Text>
-        </View>
+        </TouchableOpacity>
       );
     } else if (status == "completed") {
       return;
     }
 
     return (
-      <View
+      <TouchableOpacity
+        onPress={() => console.log("Start")}
         style={{
           width: 62,
           height: 32,
@@ -330,7 +332,7 @@ const WorkCard = ({ status }) => {
         >
           Start
         </Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 
