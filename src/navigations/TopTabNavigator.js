@@ -14,7 +14,7 @@ const TopTabNavigator = () => {
       tabBarOptions={{
         style: { elevation: 0 },
         activeTintColor: COLORS.text800,
-        labelStyle: { ...FONTS.h6 },
+        labelStyle: { ...FONTS.h6, textTransform: "capitalize" },
         inactiveTintColor: COLORS.text500,
         showIcon: true,
         iconStyle: { top: 34, left: 73 },
@@ -26,6 +26,7 @@ const TopTabNavigator = () => {
         component={ActiveWork}
         options={{
           tabBarLabel: "Active Work",
+
           tabBarIcon: ({ focused }) =>
             focused ? (
               <View
