@@ -4,8 +4,14 @@ import ResetPassword from "./auth/ResetPassword";
 import Dashboard from "./Dashboard";
 import ActiveWork from "./ActiveWork";
 import CompletedWork from "./CompletedWork";
+import Report from "./Report";
+import Expense from "./Expense";
+import Profile from "./Profile";
 
 export {
+  Report,
+  Expense,
+  Profile,
   ActiveWork,
   CompletedWork,
   Dashboard,

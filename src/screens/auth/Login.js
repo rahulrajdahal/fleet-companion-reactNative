@@ -46,7 +46,7 @@ const Login = ({ navigation }) => {
     return (
       <>
         <LargeButton
-          onPress={() => navigation.navigate("Dashboard")}
+          onPress={() => navigation.navigate("BottomNavTab")}
           text="LogIn"
           color={COLORS.success}
           textColor={COLORS.white}
