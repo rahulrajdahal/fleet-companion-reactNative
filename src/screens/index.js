@@ -7,8 +7,10 @@ import CompletedWork from "./CompletedWork";
 import Report from "./Report";
 import Expense from "./Expense";
 import Profile from "./Profile";
+import Assessment from "./Assessment";
 
 export {
+  Assessment,
   Report,
   Expense,
   Profile,

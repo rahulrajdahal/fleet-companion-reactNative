@@ -8,8 +8,12 @@ import ReportIcon from "../../assets/icons/report.svg";
 import ExpenseIcon from "../../assets/icons/expenses.svg";
 import UserIcon from "../../assets/icons/user.svg";
 import ModalClose from "../../assets/icons/modalClose.svg";
+import ArrowLeft from "../../assets/icons/arrow-left.svg";
+import Check from "../../assets/icons/check.svg";
 
 export {
+  Check,
+  ArrowLeft,
   ModalClose,
   ExpenseIcon,
   UserIcon,

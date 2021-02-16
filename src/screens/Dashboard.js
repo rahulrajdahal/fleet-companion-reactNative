@@ -21,7 +21,7 @@ import { FONTS, COLORS, SIZES } from "../constants";
 import { Logo, Menu, Chat, Plus, ModalClose } from "../constants/icons";
 import TopTabNavigator from "../navigations/TopTabNavigator";
 
-const Dashboard = () => {
+const Dashboard = ({ navigation }) => {
   const [modalVisible, setModalVisible] = React.useState(false);
 
   function renderNavbar() {
@@ -268,6 +268,11 @@ const Dashboard = () => {
   }
 
   function renderFAB() {
+    function createWork() {
+      navigation.navigate("Assessment");
+      setModalVisible((modalVisible) => !modalVisible);
+    }
+
     return (
       <>
         <Modal
@@ -357,7 +362,7 @@ const Dashboard = () => {
                   backgroundColor: COLORS.success,
                   borderRadius: SIZES.borderRadius,
                 }}
-                onPress={() => setModalVisible((modalVisible) => !modalVisible)}
+                onPress={() => createWork()}
               >
                 <Text
                   style={{

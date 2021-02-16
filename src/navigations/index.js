@@ -1,4 +1,5 @@
 import TopTabNavigator from "./TopTabNavigator";
 import BottomNavTab from "./BottomNavTab";
+import DashboardStackScreen from "./DashboardStackScreen";
 
-export { TopTabNavigator, BottomNavTab };
+export { DashboardStackScreen, TopTabNavigator, BottomNavTab };
