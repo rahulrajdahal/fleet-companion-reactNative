@@ -88,7 +88,6 @@ const Dashboard = () => {
     return (
       <View
         style={{
-          marginTop: 32,
           width: 327,
           height: 177,
           backgroundColor: "rgba(21, 72, 191, 0.05)",
@@ -304,7 +303,10 @@ const Dashboard = () => {
     >
       {/* Navbar  */}
       {renderNavbar()}
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ marginTop: 32 }}
+      >
         {/* PieChart */}
         {renderPieChart()}
 
@@ -314,10 +316,9 @@ const Dashboard = () => {
         {/* Time Card */}
         {renderTimeCard()}
 
-        <View style={{ width: 327, marginTop: 11 }}>
+        <View style={{ width: 327 }}>
           <TopTabNavigator />
         </View>
-        
       </ScrollView>
       {/* Floating Action Button */}
       {renderFAB()}

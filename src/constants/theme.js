@@ -30,6 +30,7 @@ export const COLORS = {
   info500: "#7391D9",
   info400: "#89A3DE",
   info300: "#B9C9EC",
+  info200: "#D0DAF2",
 
   warning900: "#AA5400",
   warning800: "#CB6E00",
@@ -49,6 +50,7 @@ export const COLORS = {
   danger500: "#DF757E",
   danger400: "#E38B93",
   danger300: "#EFBABF",
+  danger200: "#F4D1D4",
 
   //   text colors
   text1000: "#020E26",

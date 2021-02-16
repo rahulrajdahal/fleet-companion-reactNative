@@ -6,7 +6,7 @@ import { COLORS } from "../constants";
 const CompletedWork = () => {
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.white }}>
-      <WorkCard />
+      <WorkCard status="completed" />
     </View>
   );
 };

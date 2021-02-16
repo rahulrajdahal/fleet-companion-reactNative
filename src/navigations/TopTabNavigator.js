@@ -26,18 +26,7 @@ const TopTabNavigator = () => {
         component={ActiveWork}
         options={{
           tabBarLabel: "Active Work",
-
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <View
-                style={{
-                  width: 6,
-                  height: 6,
-                  backgroundColor: COLORS.text800,
-                  borderRadius: 10,
-                }}
-              />
-            ) : null,
+          tabBarIcon: ({ focused }) => (focused ? <Active /> : null),
         }}
       />
       <Tab.Screen
@@ -45,18 +34,7 @@ const TopTabNavigator = () => {
         component={CompletedWork}
         options={{
           tabBarLabel: "Completed",
-
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <View
-                style={{
-                  width: 6,
-                  height: 6,
-                  backgroundColor: COLORS.text800,
-                  borderRadius: 10,
-                }}
-              />
-            ) : null,
+          tabBarIcon: ({ focused }) => (focused ? <Active /> : null),
         }}
       />
     </Tab.Navigator>

@@ -7,8 +7,8 @@ const ActiveWork = () => {
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.white }}>
       <WorkCard />
-      <WorkCard inProgress />
-      <WorkCard />
+      <WorkCard status="inProgress" />
+      <WorkCard status="scheduled" />
     </View>
   );
 };
