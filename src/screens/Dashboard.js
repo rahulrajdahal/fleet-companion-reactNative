@@ -269,7 +269,7 @@ const Dashboard = ({ navigation }) => {
 
   function renderFAB() {
     function createWork() {
-      navigation.navigate("Assessment");
+      navigation.navigate("PageOne");
       setModalVisible((modalVisible) => !modalVisible);
     }
 

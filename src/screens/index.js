@@ -7,10 +7,14 @@ import CompletedWork from "./CompletedWork";
 import Report from "./Report";
 import Expense from "./Expense";
 import Profile from "./Profile";
-import Assessment from "./Assessment";
+import PageOne from "./assessment/PageOne";
+import PageTwo from "./assessment/PageTwo";
+import PageThree from "./assessment/PageThree";
 
 export {
-  Assessment,
+  PageThree,
+  PageTwo,
+  PageOne,
   Report,
   Expense,
   Profile,

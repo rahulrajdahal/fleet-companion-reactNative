@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Assessment, Dashboard } from "../screens";
+import { PageOne, Dashboard, PageTwo, PageThree } from "../screens";
 
 const DashboardStack = createStackNavigator();
 
@@ -13,7 +13,21 @@ const DashboardStackScreen = () => {
         options={{ headerShown: false }}
       />
 
-      <DashboardStack.Screen name="Assessment" component={Assessment} />
+      <DashboardStack.Screen
+        name="PageOne"
+        component={PageOne}
+        options={{ headerTitle: "Assessment" }}
+      />
+      <DashboardStack.Screen
+        name="PageTwo"
+        component={PageTwo}
+        options={{ headerTitle: "Assessment" }}
+      />
+      <DashboardStack.Screen
+        name="PageThree"
+        component={PageThree}
+        options={{ headerTitle: "Assessment" }}
+      />
     </DashboardStack.Navigator>
   );
 };
