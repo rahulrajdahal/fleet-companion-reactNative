@@ -1,6 +1,12 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { PageOne, Dashboard, PageTwo, PageThree } from "../screens";
+import {
+  PageOne,
+  Dashboard,
+  PageTwo,
+  PageThree,
+  VehicleSelection,
+} from "../screens";
 
 const DashboardStack = createStackNavigator();
 
@@ -27,6 +33,11 @@ const DashboardStackScreen = () => {
         name="PageThree"
         component={PageThree}
         options={{ headerTitle: "Assessment" }}
+      />
+      <DashboardStack.Screen
+        name="VehicleSelection"
+        component={VehicleSelection}
+        options={{ headerTitle: "Vehicle Selection" }}
       />
     </DashboardStack.Navigator>
   );

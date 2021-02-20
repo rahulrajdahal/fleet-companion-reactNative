@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
-import { ChoiceButton } from "../../components";
-import { COLORS, FONTS, SIZES } from "../../constants";
+import { ChoiceButton } from "../../../components";
+import { COLORS, FONTS, SIZES } from "../../../constants";
 
 const PageTwo = ({ navigation }) => {
   function renderHeading() {

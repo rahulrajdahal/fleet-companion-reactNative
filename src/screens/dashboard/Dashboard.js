@@ -16,10 +16,10 @@ import {
   VictoryPie,
   VictoryTheme,
 } from "victory-native";
-import { TimeCard, WorkCard } from "../components";
-import { FONTS, COLORS, SIZES } from "../constants";
-import { Logo, Menu, Chat, Plus, ModalClose } from "../constants/icons";
-import TopTabNavigator from "../navigations/TopTabNavigator";
+import { TimeCard, WorkCard } from "../../components";
+import { FONTS, COLORS, SIZES } from "../../constants";
+import { Logo, Menu, Chat, Plus, ModalClose } from "../../constants/icons";
+import TopTabNavigator from "../../navigations/TopTabNavigator";
 
 const Dashboard = ({ navigation }) => {
   const [modalVisible, setModalVisible] = React.useState(false);

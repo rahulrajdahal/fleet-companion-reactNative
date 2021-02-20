@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { ChoiceButton } from "../../components";
-import { COLORS, FONTS } from "../../constants";
-import { Check } from "../../constants/icons";
+import { ChoiceButton } from "../../../components";
+import { COLORS, FONTS, SIZES } from "../../../constants";
+import { Check } from "../../../constants/icons";
 
 const PageOne = ({ navigation }) => {
   function renderHeading() {
@@ -24,7 +24,7 @@ const PageOne = ({ navigation }) => {
             fontWeight: "bold",
           }}
         >
-          Fatigue Self Assessment
+          COVID-19 Assessment
         </Text>
         <Text
           style={{
@@ -34,18 +34,59 @@ const PageOne = ({ navigation }) => {
             fontWeight: "bold",
           }}
         >
-          1/3
+          3/3
         </Text>
       </View>
     );
   }
 
   function renderDescription() {
-    return (
-      <>
+    const points = [
+      {
+        _id: 1,
+        desc: "I do not have any cold, flu or COVID-19 symptoms",
+      },
+      {
+        _id: 2,
+        desc: "I am not awating a COVID-19 test result",
+      },
+      {
+        _id: 3,
+        desc: "I have not been advised/directed to self-isolate or quarantine.",
+      },
+      {
+        _id: 4,
+        desc: "I have not been in contact with a confirm case of COVID-19",
+      },
+    ];
+
+    return points.map((point) => (
+      <View
+        key={point._id}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          marginTop: 12,
+        }}
+      >
+        <View
+          style={{
+            width: 8.33,
+            height: 8.33,
+            backgroundColor: COLORS.text300,
+            borderRadius: SIZES.borderRadius,
+          }}
+        />
+
+        <View
+          style={{
+            width: 4.83,
+          }}
+        />
+
         <Text
           style={{
-            marginTop: 12,
             color: COLORS.text600,
             fontFamily: "Inter",
             fontWeight: "200",
@@ -53,37 +94,18 @@ const PageOne = ({ navigation }) => {
             lineHeight: 24,
           }}
         >
-          You MUST NOT be suffering from a lack of alertness, inability to
-          concerntrate, reduce ability to recognize or respond to external
-          stimuli, poor judgement or memory, lack gof attention to detail,
-          drowsiness and excessive yawning, finding it difficult to keep the
-          eyes open and/or blurred vision, need or more frequent naps than
-          usual, not feeling refreshed after sleep, easily distracted, a sense
-          of continual pressure at work and/or home, domestic relationsahip
-          and/or sickness.
+          {point.desc}
         </Text>
-        <Text
-          style={{
-            marginTop: 24,
-            color: COLORS.text600,
-            fontFamily: "Inter",
-            fontWeight: "200",
-            fontSize: 16,
-            lineHeight: 24,
-          }}
-        >
-          By ticking the box, you are declaring that you are fit for duty. You
-          are not fatigued and you ahve xero drug and/or alcohol in your system.
-        </Text>
-      </>
-    );
+      </View>
+    ));
   }
 
   function renderChoice() {
     return (
       <View
         style={{
-          marginTop: 39,
+          marginTop: 243,
+          marginBottom: 60,
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
@@ -92,7 +114,7 @@ const PageOne = ({ navigation }) => {
       >
         <ChoiceButton disagree onPress={() => navigation.goBack()} />
         <View style={{ width: 20 }} />
-        <ChoiceButton onPress={() => navigation.navigate("PageTwo")} />
+        <ChoiceButton onPress={() => navigation.navigate("VehicleSelection")} />
       </View>
     );
   }
@@ -107,10 +129,8 @@ const PageOne = ({ navigation }) => {
     >
       {/* Title And Page Number */}
       {renderHeading()}
-
       {/* Description */}
       {renderDescription()}
-
       {/* Agree And Disagree Button */}
       {renderChoice()}
     </View>
