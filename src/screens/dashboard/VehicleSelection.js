@@ -49,6 +49,56 @@ const VehicleSelection = () => {
     );
   }
 
+  function renderVehicleDetails() {
+    return (
+      <View style={{ marginTop: 22 }}>
+        <Text
+          style={{
+            color: COLORS.primary,
+            ...FONTS.body3,
+            fontFamily: "Manrope",
+            fontWeight: "600",
+          }}
+        >
+          Vehicle Details
+        </Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: 12,
+          }}
+        >
+          <Text
+            style={{
+              ...FONTS.body3,
+              color: COLORS.text700,
+              fontFamily: "Manrope",
+              marginTop: 2,
+            }}
+          >
+            Rego Number
+          </Text>
+          {/* <View style={{ width: 159 }} /> */}
+          <Text
+            style={{
+              ...FONTS.body3,
+              color: COLORS.text700,
+              fontFamily: "Manrope",
+              fontWeight: "500",
+              marginTop: 2,
+              marginRight: 61,
+            }}
+          >
+            FRD85
+          </Text>
+        </View>
+      </View>
+    );
+  }
+
   return (
     <View
       style={{
@@ -59,6 +109,9 @@ const VehicleSelection = () => {
     >
       {/* Vehicle TropDown */}
       {renderDropDown()}
+
+      {/* Vehicle Details */}
+      {renderVehicleDetails()}
       <Text>VehicleSelection</Text>
     </View>
   );
