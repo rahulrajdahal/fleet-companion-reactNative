@@ -3,5 +3,13 @@ import LargeButton from "./LargeButton";
 import TimeCard from "./TimeCard";
 import WorkCard from "./WorkCard";
 import ChoiceButton from "./ChoiceButton";
+import DashboardHeader from "./DashboardHeader";
 
-export { ChoiceButton, WorkCard, TimeCard, LargeButton, Input };
+export {
+  DashboardHeader,
+  ChoiceButton,
+  WorkCard,
+  TimeCard,
+  LargeButton,
+  Input,
+};

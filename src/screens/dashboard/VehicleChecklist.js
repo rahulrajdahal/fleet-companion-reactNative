@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView, Text, View } from "react-native";
+import { DashboardHeader } from "../../components";
 import { COLORS, FONTS, SIZES } from "../../constants";
 import { ArrowLeft } from "../../constants/icons";
 
@@ -80,6 +81,7 @@ const VehicleChecklist = ({ navigation }) => {
         backgroundColor: COLORS.white,
       }}
     >
+      <DashboardHeader />
       {/* renderHeader     */}
       {renderHeader()}
       <View
