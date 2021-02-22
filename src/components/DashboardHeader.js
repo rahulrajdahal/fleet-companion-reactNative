@@ -2,8 +2,11 @@ import React from "react";
 import { Text, View } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants";
 import { ArrowLeft } from "../constants/icons";
+import { useNavigation } from "@react-navigation/native";
 
-const DashboardHeader = ({ navigation }) => {
+const DashboardHeader = ({ title, headerRight }) => {
+  const navigation = useNavigation();
+
   return (
     <>
       <View
@@ -34,30 +37,33 @@ const DashboardHeader = ({ navigation }) => {
               marginLeft: 16,
             }}
           >
-            Vehicle Checklist
+            {title}
           </Text>
         </View>
-        <View
-          style={{
-            width: 124,
-            height: 48,
-            backgroundColor: COLORS.success200,
-            borderRadius: SIZES.borderRadius,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Text
+
+        {headerRight ? (
+          <View
             style={{
-              color: COLORS.success,
-              ...FONTS.body3,
-              fontWeight: "600",
-              fontFamily: "Manrope",
+              width: 124,
+              height: 48,
+              backgroundColor: COLORS.success200,
+              borderRadius: SIZES.borderRadius,
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            Create Fault
-          </Text>
-        </View>
+            <Text
+              style={{
+                color: COLORS.success,
+                ...FONTS.body3,
+                fontWeight: "600",
+                fontFamily: "Manrope",
+              }}
+            >
+              Create Fault
+            </Text>
+          </View>
+        ) : null}
       </View>
       <View
         style={{
