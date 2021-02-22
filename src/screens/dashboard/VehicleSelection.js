@@ -2,6 +2,7 @@ import React from "react";
 import { Text, View, Image } from "react-native";
 import { Picker } from "@react-native-community/picker";
 import { COLORS, SIZES, FONTS, images } from "../../constants";
+import { LargeButton } from "../../components";
 
 const VehicleSelection = () => {
   const [selectedValue, setSelectedValue] = React.useState("Ford Pickup ‘85");
@@ -50,6 +51,44 @@ const VehicleSelection = () => {
   }
 
   function renderVehicleDetails() {
+    const vehicleDetails = [
+      {
+        _id: 1,
+        title: "Rego Number",
+        data: "FRD85",
+      },
+      {
+        _id: 2,
+        title: "Year",
+        data: "1985",
+      },
+      {
+        _id: 3,
+        title: "Rego Expiry Date",
+        data: "2021/09/30",
+      },
+      {
+        _id: 4,
+        title: "Fleet Weight",
+        data: "-",
+      },
+      {
+        _id: 5,
+        title: "Make",
+        data: "Ford Classic",
+      },
+      {
+        _id: 6,
+        title: "Model",
+        data: "Pickup'85",
+      },
+      {
+        _id: 7,
+        title: "Fuel Type",
+        data: "-",
+      },
+    ];
+
     return (
       <View style={{ marginTop: 22 }}>
         <Text
@@ -57,45 +96,59 @@ const VehicleSelection = () => {
             color: COLORS.primary,
             ...FONTS.body3,
             fontFamily: "Manrope",
-            fontWeight: "600",
+            fontWeight: "bold",
           }}
         >
           Vehicle Details
         </Text>
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: 12,
-          }}
-        >
-          <Text
+
+        {vehicleDetails.map((vehicleDetail) => (
+          <View
+            key={vehicleDetail._id}
             style={{
-              ...FONTS.body3,
-              color: COLORS.text700,
-              fontFamily: "Manrope",
-              marginTop: 2,
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginTop: 12,
             }}
           >
-            Rego Number
-          </Text>
-          {/* <View style={{ width: 159 }} /> */}
-          <Text
-            style={{
-              ...FONTS.body3,
-              color: COLORS.text700,
-              fontFamily: "Manrope",
-              fontWeight: "500",
-              marginTop: 2,
-              marginRight: 61,
-            }}
-          >
-            FRD85
-          </Text>
-        </View>
+            <Text
+              style={{
+                ...FONTS.body3,
+                color: COLORS.text700,
+                fontFamily: "Manrope",
+                marginTop: 2,
+              }}
+            >
+              {vehicleDetail.title}
+            </Text>
+            <Text
+              style={{
+                ...FONTS.body3,
+                color: COLORS.text700,
+                fontFamily: "Manrope",
+                fontWeight: "500",
+                marginTop: 2,
+                alignSelf: "flex-start",
+              }}
+            >
+              {vehicleDetail.data}
+            </Text>
+          </View>
+        ))}
       </View>
+    );
+  }
+
+  function renderConfirmButton() {
+    return (
+      <LargeButton
+        text="Confirm Vehicle"
+        color={COLORS.success}
+        textColor={COLORS.white}
+        style={{ marginTop: 40, marginBottom: 40 }}
+      />
     );
   }
 
@@ -112,7 +165,9 @@ const VehicleSelection = () => {
 
       {/* Vehicle Details */}
       {renderVehicleDetails()}
-      <Text>VehicleSelection</Text>
+
+      {/* Confirm Button */}
+      {renderConfirmButton()}
     </View>
   );
 };
