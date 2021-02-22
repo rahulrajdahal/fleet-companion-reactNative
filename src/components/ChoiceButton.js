@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { COLORS, FONTS } from "../constants";
 import { Check } from "../constants/icons";
 
-const ChoiceButton = ({ disagree, onPress, text }) => {
+const ChoiceButton = ({ disagree, onPress, text, style }) => {
   return (
     <TouchableOpacity
       style={{
@@ -17,6 +17,7 @@ const ChoiceButton = ({ disagree, onPress, text }) => {
         borderColor: disagree ? COLORS.danger : COLORS.success,
         borderRadius: 20,
         padding: 8,
+        ...style,
       }}
       onPress={onPress}
     >
