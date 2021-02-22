@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Picker } from "@react-native-community/picker";
 import { COLORS, SIZES, FONTS, images } from "../../constants";
-import { LargeButton } from "../../components";
+import { DashboardHeader, LargeButton } from "../../components";
 import { Logo, Menu, Chat, Plus, ModalClose } from "../../constants/icons";
 import { VehicleChecklist } from "..";
 
@@ -284,17 +284,24 @@ const VehicleSelection = ({ navigation }) => {
       style={{
         flex: 1,
         backgroundColor: modalVisible ? "rgba(2, 14, 38, 0.15)" : COLORS.white,
-        paddingHorizontal: 24,
       }}
     >
-      {/* Vehicle TropDown */}
-      {renderDropDown()}
+      <DashboardHeader title="Vehicle Selection" />
 
-      {/* Vehicle Details */}
-      {renderVehicleDetails()}
+      <View
+        style={{
+          paddingHorizontal: 24,
+        }}
+      >
+        {/* Vehicle TropDown */}
+        {renderDropDown()}
 
-      {/* Confirm Button */}
-      {renderConfirmButton()}
+        {/* Vehicle Details */}
+        {renderVehicleDetails()}
+
+        {/* Confirm Button */}
+        {renderConfirmButton()}
+      </View>
     </View>
   );
 };

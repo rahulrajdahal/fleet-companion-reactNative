@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
-import { ChoiceButton } from "../../../components";
+import { ChoiceButton, DashboardHeader } from "../../../components";
 import { COLORS, FONTS, SIZES } from "../../../constants";
 
 const PageTwo = ({ navigation }) => {
@@ -151,9 +151,16 @@ const PageTwo = ({ navigation }) => {
           justifyContent: "center",
         }}
       >
-        <ChoiceButton disagree onPress={() => navigation.goBack()} />
+        <ChoiceButton
+          disagree
+          text="I Disagree"
+          onPress={() => navigation.goBack()}
+        />
         <View style={{ width: 20 }} />
-        <ChoiceButton onPress={() => navigation.navigate("PageThree")} />
+        <ChoiceButton
+          text="I agree"
+          onPress={() => navigation.navigate("PageThree")}
+        />
       </View>
     );
   }
@@ -163,18 +170,24 @@ const PageTwo = ({ navigation }) => {
       style={{
         flex: 1,
         backgroundColor: COLORS.white,
-        paddingHorizontal: 24,
       }}
     >
+      <DashboardHeader title="Assessment" />
       <ScrollView>
-        {/* Title And Page Number */}
-        {renderHeading()}
+        <View
+          style={{
+            paddingHorizontal: 24,
+          }}
+        >
+          {/* Title And Page Number */}
+          {renderHeading()}
 
-        {/* Description */}
-        {renderDescription()}
+          {/* Description */}
+          {renderDescription()}
 
-        {/* Agree And Disagree Button */}
-        {renderChoice()}
+          {/* Agree And Disagree Button */}
+          {renderChoice()}
+        </View>
       </ScrollView>
     </View>
   );

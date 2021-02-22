@@ -33,32 +33,28 @@ const DashboardStackScreen = () => {
         name="PageOne"
         component={PageOne}
         options={{
-          headerTitle: "Assessment",
-          headerTitleStyle: headerTitleStyle,
+          headerShown: false,
         }}
       />
       <DashboardStack.Screen
         name="PageTwo"
         component={PageTwo}
         options={{
-          headerTitle: "Assessment",
-          headerTitleStyle: headerTitleStyle,
+          headerShown: false,
         }}
       />
       <DashboardStack.Screen
         name="PageThree"
         component={PageThree}
         options={{
-          headerTitle: "Assessment",
-          headerTitleStyle: headerTitleStyle,
+          headerShown: false,
         }}
       />
       <DashboardStack.Screen
         name="VehicleSelection"
         component={VehicleSelection}
         options={{
-          headerTitle: "Vehicle Selection",
-          headerTitleStyle: headerTitleStyle,
+          headerShown: false,
         }}
       />
 

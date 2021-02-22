@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants";
 import { ArrowLeft } from "../constants/icons";
 import { useNavigation } from "@react-navigation/native";
@@ -42,7 +42,8 @@ const DashboardHeader = ({ title, headerRight }) => {
         </View>
 
         {headerRight ? (
-          <View
+          <TouchableOpacity
+            onPress={() => console.log("Fault Created")}
             style={{
               width: 124,
               height: 48,
@@ -62,7 +63,7 @@ const DashboardHeader = ({ title, headerRight }) => {
             >
               Create Fault
             </Text>
-          </View>
+          </TouchableOpacity>
         ) : null}
       </View>
       <View

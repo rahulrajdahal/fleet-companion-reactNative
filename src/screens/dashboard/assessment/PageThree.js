@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { ChoiceButton } from "../../../components";
+import { ChoiceButton, DashboardHeader } from "../../../components";
 import { COLORS, FONTS, SIZES } from "../../../constants";
 import { Check } from "../../../constants/icons";
 
@@ -112,9 +112,16 @@ const PageOne = ({ navigation }) => {
           justifyContent: "center",
         }}
       >
-        <ChoiceButton disagree onPress={() => navigation.goBack()} />
+        <ChoiceButton
+          disagree
+          onPress={() => navigation.goBack()}
+          text="I Disagree"
+        />
         <View style={{ width: 20 }} />
-        <ChoiceButton onPress={() => navigation.navigate("VehicleSelection")} />
+        <ChoiceButton
+          text="I agree"
+          onPress={() => navigation.navigate("VehicleSelection")}
+        />
       </View>
     );
   }
@@ -124,15 +131,21 @@ const PageOne = ({ navigation }) => {
       style={{
         flex: 1,
         backgroundColor: COLORS.white,
-        paddingHorizontal: 24,
       }}
     >
-      {/* Title And Page Number */}
-      {renderHeading()}
-      {/* Description */}
-      {renderDescription()}
-      {/* Agree And Disagree Button */}
-      {renderChoice()}
+      <DashboardHeader title="Assessment" />
+      <View
+        style={{
+          paddingHorizontal: 24,
+        }}
+      >
+        {/* Title And Page Number */}
+        {renderHeading()}
+        {/* Description */}
+        {renderDescription()}
+        {/* Agree And Disagree Button */}
+        {renderChoice()}
+      </View>
     </View>
   );
 };

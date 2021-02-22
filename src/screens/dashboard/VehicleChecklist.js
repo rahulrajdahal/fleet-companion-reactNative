@@ -1,7 +1,15 @@
 import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import {
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+  Text,
+  View,
+  StyleSheet,
+  Animated,
+} from "react-native";
 import { DashboardHeader } from "../../components";
-import { COLORS, FONTS, SIZES } from "../../constants";
+import { COLORS, FONTS, images, SIZES } from "../../constants";
 import { ArrowLeft } from "../../constants/icons";
 
 const VehicleChecklist = ({ navigation }) => {
