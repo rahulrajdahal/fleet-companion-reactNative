@@ -6,8 +6,10 @@ import {
   PageTwo,
   PageThree,
   VehicleSelection,
+  VehicleChecklist,
 } from "../screens";
 import { COLORS, FONTS } from "../constants";
+import { View, Text } from "react-native";
 
 const DashboardStack = createStackNavigator();
 
@@ -57,6 +59,14 @@ const DashboardStackScreen = () => {
         options={{
           headerTitle: "Vehicle Selection",
           headerTitleStyle: headerTitleStyle,
+        }}
+      />
+
+      <DashboardStack.Screen
+        name="VehicleChecklist"
+        component={VehicleChecklist}
+        options={{
+          headerShown: false,
         }}
       />
     </DashboardStack.Navigator>

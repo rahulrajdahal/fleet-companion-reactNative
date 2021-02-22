@@ -11,8 +11,9 @@ import { Picker } from "@react-native-community/picker";
 import { COLORS, SIZES, FONTS, images } from "../../constants";
 import { LargeButton } from "../../components";
 import { Logo, Menu, Chat, Plus, ModalClose } from "../../constants/icons";
+import { VehicleChecklist } from "..";
 
-const VehicleSelection = () => {
+const VehicleSelection = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = React.useState("Ford Pickup ‘85");
 
   const [modalVisible, setModalVisible] = React.useState(false);
@@ -151,6 +152,11 @@ const VehicleSelection = () => {
   }
 
   function renderConfirmButton() {
+    function confirmRegNo() {
+      setModalVisible((modalVisible) => !modalVisible);
+      navigation.navigate("VehicleChecklist");
+    }
+
     return (
       <>
         <Modal
@@ -246,7 +252,7 @@ const VehicleSelection = () => {
                 backgroundColor: COLORS.success,
                 borderRadius: SIZES.borderRadius,
               }}
-              onPress={() => console.log("Confirm")}
+              onPress={() => confirmRegNo()}
             >
               <Text
                 style={{

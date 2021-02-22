@@ -269,8 +269,8 @@ const Dashboard = ({ navigation }) => {
 
   function renderFAB() {
     function createWork() {
-      navigation.navigate("PageOne");
       setModalVisible((modalVisible) => !modalVisible);
+      navigation.navigate("PageOne");
     }
 
     return (
