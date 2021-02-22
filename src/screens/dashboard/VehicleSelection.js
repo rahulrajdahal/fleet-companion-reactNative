@@ -1,12 +1,21 @@
 import React from "react";
-import { Text, View, Image } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  Modal,
+  Pressable,
+  TouchableOpacity,
+} from "react-native";
 import { Picker } from "@react-native-community/picker";
 import { COLORS, SIZES, FONTS, images } from "../../constants";
 import { LargeButton } from "../../components";
+import { Logo, Menu, Chat, Plus, ModalClose } from "../../constants/icons";
 
 const VehicleSelection = () => {
   const [selectedValue, setSelectedValue] = React.useState("Ford Pickup ‘85");
 
+  const [modalVisible, setModalVisible] = React.useState(false);
   function renderDropDown() {
     return (
       <View>
@@ -143,12 +152,124 @@ const VehicleSelection = () => {
 
   function renderConfirmButton() {
     return (
-      <LargeButton
-        text="Confirm Vehicle"
-        color={COLORS.success}
-        textColor={COLORS.white}
-        style={{ marginTop: 40, marginBottom: 40 }}
-      />
+      <>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() =>
+            setModalVisible((modalVisible) => !modalVisible)
+          }
+        >
+          <View
+            style={{
+              width: 327,
+              height: 272,
+              backgroundColor: COLORS.white,
+              borderRadius: 20,
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              paddingHorizontal: 32,
+              padding: 32,
+              elevation: 5,
+              shadowColor: "rgba(0, 0, 0, 0.2)",
+              shadowOffset: {
+                width: 5,
+                height: 50,
+              },
+              shadowRadius: 50,
+            }}
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "Manrope",
+                  fontWeight: "600",
+                  fontSize: 16,
+                  lineHeight: 16,
+                  color: COLORS.text1000,
+                }}
+              >
+                Confirm Reg. Number
+              </Text>
+              <ModalClose
+                onPress={() => setModalVisible((modalVisible) => !modalVisible)}
+              />
+            </View>
+            <Text
+              style={{
+                marginTop: 12,
+                width: 263,
+                color: COLORS.text500,
+                ...FONTS.body3,
+                lineHeight: 20,
+              }}
+            >
+              Please confrim the Registration No. of the Vehicle before
+              proceeding.
+            </Text>
+
+            <View
+              style={{
+                marginTop: 12,
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                width: 263,
+                height: 48,
+                backgroundColor: "rgba(18, 130, 57, 0.05)",
+                borderRadius: SIZES.borderRadius,
+                padding: 17,
+                alignItems: "center",
+              }}
+            >
+              <Text>Rego Number</Text>
+              <Text>FRD85</Text>
+            </View>
+
+            <Pressable
+              style={{
+                width: 181,
+                height: 48,
+                marginVertical: 32,
+                alignSelf: "center",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: COLORS.success,
+                borderRadius: SIZES.borderRadius,
+              }}
+              onPress={() => console.log("Confirm")}
+            >
+              <Text
+                style={{
+                  color: COLORS.white,
+                  ...FONTS.body3,
+                  fontFamily: "Manrope",
+                  fontWeight: "600",
+                }}
+              >
+                Confirm Reg. Number
+              </Text>
+            </Pressable>
+          </View>
+        </Modal>
+
+        <LargeButton
+          text="Confirm Vehicle"
+          color={COLORS.success}
+          textColor={COLORS.white}
+          style={{ marginTop: 40, marginBottom: 40 }}
+          onPress={() => setModalVisible(true)}
+        />
+      </>
     );
   }
 
@@ -156,7 +277,7 @@ const VehicleSelection = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.white,
+        backgroundColor: modalVisible ? "rgba(2, 14, 38, 0.15)" : COLORS.white,
         paddingHorizontal: 24,
       }}
     >
