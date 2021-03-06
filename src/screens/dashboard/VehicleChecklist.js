@@ -8,13 +8,18 @@ import {
   StyleSheet,
   Animated,
   Pressable,
+  ScrollView,
 } from "react-native";
 import { AddButton, ChoiceButton, DashboardHeader } from "../../components";
 import { COLORS, FONTS, images, SIZES } from "../../constants";
 import { ArrowLeft } from "../../constants/icons";
 
 const VehicleChecklist = ({ navigation }) => {
+  // const [progressIndex, setProgressIndex] = React.useState(0);
+
   const scrollX = new Animated.Value(0);
+
+  const scrollViewref = React.useRef(null);
 
   React.useEffect(() => {
     scrollX.addListener(({ value }) => {
@@ -181,26 +186,6 @@ const VehicleChecklist = ({ navigation }) => {
               extrapolate: "clamp",
             });
 
-            function borderRadiusTop() {
-              if (index) {
-                return {
-                  borderBottomRightRadius: 10.5,
-                };
-              } else if (index - 1) {
-                return { borderTopRightRadius: 10.5 };
-              }
-            }
-            function borderRadiusBottom() {
-              if (index) {
-                return {
-                  borderBottomRightRadius: 10.5,
-                };
-              } else if (index - 1) {
-                return { borderBottomRightRadius: 10.5 };
-              }
-              return { borderBottomRightRadius: 0 };
-            }
-
             return (
               <Animated.View
                 key={index}
@@ -208,8 +193,8 @@ const VehicleChecklist = ({ navigation }) => {
                   backgroundColor: COLORS.success,
                   width: progress,
                   height: 6,
-                  borderTopRightRadius: borderRadiusTop(),
-                  borderBottomRightRadius: borderRadiusBottom(),
+                  borderTopRightRadius: index - 1 ? 0 : 10.5,
+                  borderBottomRightRadius: index - 1 ? 0 : 10.5,
                 }}
               />
             );
@@ -304,7 +289,48 @@ const VehicleChecklist = ({ navigation }) => {
       );
     }
 
-    function renderChoices() {
+    function renderChoices(item, index) {
+      function prevPage() {
+        let node = scrollViewref.current;
+
+        if (index == 0) {
+          return node.scrollTo({ x: 327, y: 0 });
+        } else if (index == 1) {
+          return node.scrollTo({ x: 0, y: 0 });
+        } else if (index == 2) {
+          return node.scrollTo({ x: 327, y: 0 });
+        } else if (index == 3) {
+          return node.scrollTo({ x: 654, y: 0 });
+        } else if (index == 4) {
+          return node.scrollTo({ x: 981, y: 0 });
+        } else if (index == 5) {
+          return node.scrollTo({ x: 1308, y: 0 });
+        }
+
+        // console.log(index);
+        return node.scrollTo({ x: 0, y: 0 });
+      }
+
+      function nextPage() {
+        let node = scrollViewref.current;
+
+        if (index == 0) {
+          return node.scrollTo({ x: 327, y: 0 });
+        } else if (index == 1) {
+          return node.scrollTo({ x: 654, y: 0 });
+        } else if (index == 2) {
+          return node.scrollTo({ x: 981, y: 0 });
+        } else if (index == 3) {
+          return node.scrollTo({ x: 1308, y: 0 });
+        } else if (index == 4) {
+          return node.scrollTo({ x: 1635, y: 0 });
+        } else if (index == 5) {
+          return node.scrollTo({ x: 1962, y: 0 });
+        }
+
+        // console.log(index);
+        return node.scrollTo({ x: 0, y: 0 });
+      }
       return (
         <View
           style={{
@@ -316,21 +342,17 @@ const VehicleChecklist = ({ navigation }) => {
             marginHorizontal: 26,
           }}
         >
-          <ChoiceButton
-            disagree
-            text="Broken"
-            onPress={() => console.log(scrollX)}
-          />
-          <ChoiceButton text="Acceptable" />
+          <ChoiceButton disagree text="Broken" onPress={prevPage} />
+          <ChoiceButton text="Acceptable" onPress={nextPage} />
         </View>
       );
     }
 
     return (
-      <Animated.ScrollView
+      <ScrollView
         horizontal
         pagingEnabled
-        scrollEnabled
+        scrollEnabled={false}
         decelerationRate={0}
         scrollEventThrottle={16}
         snapToAlignment="center"
@@ -340,6 +362,7 @@ const VehicleChecklist = ({ navigation }) => {
           { useNativeDriver: false }
         )}
         style={{ width: 327 }}
+        ref={scrollViewref}
       >
         {contents.map((item, index) => (
           <View
@@ -351,10 +374,10 @@ const VehicleChecklist = ({ navigation }) => {
             {renderButtons()}
             {renderImage(item, index)}
             {renderPoints(item, index)}
-            {renderChoices()}
+            {renderChoices(item, index)}
           </View>
         ))}
-      </Animated.ScrollView>
+      </ScrollView>
     );
   }
 
