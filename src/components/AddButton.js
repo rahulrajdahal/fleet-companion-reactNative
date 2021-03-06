@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, Image } from "react-native";
 import { COLORS, images, SIZES } from "../constants";
 
-const AddButton = ({ text, image }) => {
+const AddButton = ({ text, image, style }) => {
   return (
     <View
       style={{
@@ -16,6 +16,7 @@ const AddButton = ({ text, image }) => {
         borderColor: COLORS.success,
         borderRadius: SIZES.borderRadius,
         flexDirection: "row",
+        ...style,
       }}
     >
       <Image source={image} style={{ marginRight: 10 }} />
