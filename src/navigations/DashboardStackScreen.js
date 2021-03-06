@@ -7,6 +7,7 @@ import {
   PageThree,
   VehicleSelection,
   VehicleChecklist,
+  ConfirmChecklist,
 } from "../screens";
 import { COLORS, FONTS } from "../constants";
 import { View, Text } from "react-native";
@@ -61,6 +62,13 @@ const DashboardStackScreen = () => {
       <DashboardStack.Screen
         name="VehicleChecklist"
         component={VehicleChecklist}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <DashboardStack.Screen
+        name="ConfirmChecklist"
+        component={ConfirmChecklist}
         options={{
           headerShown: false,
         }}

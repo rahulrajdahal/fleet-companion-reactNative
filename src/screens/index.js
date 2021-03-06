@@ -12,8 +12,10 @@ import PageTwo from "./dashboard/assessment/PageTwo";
 import PageThree from "./dashboard/assessment/PageThree";
 import VehicleSelection from "./dashboard/VehicleSelection";
 import VehicleChecklist from "./dashboard/VehicleChecklist";
+import ConfirmChecklist from "./dashboard/ConfirmChecklist";
 
 export {
+  ConfirmChecklist,
   VehicleChecklist,
   VehicleSelection,
   PageThree,

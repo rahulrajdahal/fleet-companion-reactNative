@@ -13,9 +13,10 @@ import {
 import { AddButton, ChoiceButton, DashboardHeader } from "../../components";
 import { COLORS, FONTS, images, SIZES } from "../../constants";
 import { ArrowLeft } from "../../constants/icons";
+import { useNavigation } from "@react-navigation/native";
 
-const VehicleChecklist = ({ navigation }) => {
-  // const [progressIndex, setProgressIndex] = React.useState(0);
+const VehicleChecklist = () => {
+  const navigation = useNavigation();
 
   const scrollX = new Animated.Value(0);
 
@@ -294,7 +295,7 @@ const VehicleChecklist = ({ navigation }) => {
         let node = scrollViewref.current;
 
         if (index == 0) {
-          return node.scrollTo({ x: 327, y: 0 });
+          return navigation.goBack();
         } else if (index == 1) {
           return node.scrollTo({ x: 0, y: 0 });
         } else if (index == 2) {
@@ -306,13 +307,12 @@ const VehicleChecklist = ({ navigation }) => {
         } else if (index == 5) {
           return node.scrollTo({ x: 1308, y: 0 });
         }
-
-        // console.log(index);
-        return node.scrollTo({ x: 0, y: 0 });
       }
 
       function nextPage() {
         let node = scrollViewref.current;
+
+        console.log(index);
 
         if (index == 0) {
           return node.scrollTo({ x: 327, y: 0 });
@@ -325,11 +325,8 @@ const VehicleChecklist = ({ navigation }) => {
         } else if (index == 4) {
           return node.scrollTo({ x: 1635, y: 0 });
         } else if (index == 5) {
-          return node.scrollTo({ x: 1962, y: 0 });
+          return navigation.navigate("ConfirmChecklist");
         }
-
-        // console.log(index);
-        return node.scrollTo({ x: 0, y: 0 });
       }
       return (
         <View
