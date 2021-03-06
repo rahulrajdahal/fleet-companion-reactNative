@@ -7,6 +7,7 @@ import {
   View,
   StyleSheet,
   Animated,
+  Pressable,
 } from "react-native";
 import { AddButton, ChoiceButton, DashboardHeader } from "../../components";
 import { COLORS, FONTS, images, SIZES } from "../../constants";
@@ -15,86 +16,205 @@ import { ArrowLeft } from "../../constants/icons";
 const VehicleChecklist = ({ navigation }) => {
   const scrollX = new Animated.Value(0);
 
+  React.useEffect(() => {
+    scrollX.addListener(({ value }) => {
+      if (Math.floor(value / SIZES.width) === contents.length - 1) {
+      }
+    });
+
+    return () => scrollX.removeListener();
+  }, []);
+
   const contents = [
     {
       _id: 1,
-      item: "Wheels and Tyres",
+      title: "Wheels and Tyres",
       image: images.tyre,
+      points: [
+        {
+          _id: 1,
+          desc: "Check all tyres are adequately inflated.",
+        },
+        {
+          _id: 2,
+          desc: "Check all tyres tread depth & integrity",
+        },
+        {
+          _id: 3,
+          desc: "Check all wheels are secure",
+        },
+        {
+          _id: 4,
+          desc: "Check all rims for damage",
+        },
+        {
+          _id: 5,
+          desc: "Check triangles, jack & wheels brace are in vehicle",
+        },
+      ],
     },
     {
       _id: 2,
-      item: "Wheels and Tyres",
-      image: images.tyre,
+      title: "Light and Reflectors",
+      image: images.lightBulb,
+      points: [
+        {
+          _id: 1,
+          desc: "Check all lights, including clearance lights are working",
+        },
+        {
+          _id: 2,
+          desc: "Check all reflectors & lenses are intact and clean",
+        },
+        {
+          _id: 3,
+          desc:
+            "Check hazard safety lights, including amber rotating lights (if applicable)",
+        },
+      ],
     },
     {
       _id: 3,
-      item: "Wheels and Tyres",
-      image: images.tyre,
+      title: "Wheels and Tyres",
+      image: images.sideMirror,
+      points: [
+        {
+          _id: 1,
+          desc: "Check windows & mirrors are secure, undamaged & clean",
+        },
+        {
+          _id: 2,
+          desc:
+            "Check windscreen wipers & washers to endure clear forward vision",
+        },
+        {
+          _id: 3,
+          desc: "Check washer fluid",
+        },
+      ],
+    },
+    {
+      _id: 4,
+      title: "Structural Body & Fluid Systems",
+      image: images.miniTruck,
+      points: [
+        {
+          _id: 1,
+          desc: "Check 5th wheel turntable",
+        },
+        {
+          _id: 2,
+          desc:
+            "Check all panels, readily visible structural and suspension components are functional & secure",
+        },
+        {
+          _id: 3,
+          desc:
+            "Check all tanks, toolboxes, other attachments & load restraint fittings are secure.",
+        },
+        {
+          _id: 4,
+          desc: "Check exhaust for leaks & discharge",
+        },
+      ],
+    },
+    {
+      _id: 5,
+      title: "Brake & Suspension Air Systems",
+      image: images.brakes,
+      points: [
+        {
+          _id: 1,
+          desc: "Check brake failure indicators",
+        },
+        {
+          _id: 2,
+          desc: "Check pressure/vaccum gauges",
+        },
+        {
+          _id: 3,
+          desc: "Drain air tanks, note discharge",
+        },
+        {
+          _id: 4,
+          desc:
+            "Check for air leaks in breaks & suspension when system is at operating pressure",
+        },
+      ],
+    },
+    {
+      _id: 6,
+      title: "Pre-Work Period Housekeeping",
+      image: images.nurse,
+      points: [
+        {
+          _id: 1,
+          desc: "Check cabin clean & tidy",
+        },
+        {
+          _id: 2,
+          desc: "Check PPE(Personal Protective Equipment)",
+        },
+      ],
     },
   ];
 
   function renderProgressBar() {
-    const progress = Animated.divide(scrollX, SIZES.width);
+    const currentProgress = Animated.divide(scrollX, SIZES.width);
 
     return (
       <>
         <View
           style={{
-            display: "flex",
+            width: 327,
+            marginTop: 20,
+            backgroundColor: COLORS.success200,
+            borderRadius: 10.5,
+            height: 6,
             flexDirection: "row",
           }}
         >
-          <View
-            style={{
-              marginTop: 20,
-              width: 32,
-              height: 6,
-              borderRadius: 10.5,
-              backgroundColor: COLORS.success,
-            }}
-          />
-          <View
-            style={{
-              marginTop: 20,
-              width: 295,
-              height: 6,
-              borderTopRightRadius: 10.5,
-              borderBottomRightRadius: 10.5,
-              backgroundColor: COLORS.success200,
-            }}
-          />
-        </View>
-
-        {/* <View
-          style={{
-            width: 327,
-            height: 6,
-            backgroundColor: COLORS.success200,
-            borderRadius: 10.5,
-          }}
-        >
-          {content.map((item, index) => {
-            const opacity = progress.interpolate({
-              inputRange: [index - 1, index, index + 1],
-              outputRange: [0.3, 1, 0.3],
+          {contents.map((item, index) => {
+            const progress = currentProgress.interpolate({
+              inputRange: [index - 1, index],
+              outputRange: [0, 65.4],
               extrapolate: "clamp",
             });
 
-            const currentProgress = progress.interpolate({
-              inputRange: [index - 1, index, index + 1],
-              outputRange: [8, 17, 8],
-              extrapolate: "clamp",
-            });
+            function borderRadiusTop() {
+              if (index) {
+                return {
+                  borderBottomRightRadius: 10.5,
+                };
+              } else if (index - 1) {
+                return { borderTopRightRadius: 10.5 };
+              }
+            }
+            function borderRadiusBottom() {
+              if (index) {
+                return {
+                  borderBottomRightRadius: 10.5,
+                };
+              } else if (index - 1) {
+                return { borderBottomRightRadius: 10.5 };
+              }
+              return { borderBottomRightRadius: 0 };
+            }
 
             return (
               <Animated.View
                 key={index}
-                opacity={opacity}
-                style={{ width: currentProgress, height: 6 }}
+                style={{
+                  backgroundColor: COLORS.success,
+                  width: progress,
+                  height: 6,
+                  borderTopRightRadius: borderRadiusTop(),
+                  borderBottomRightRadius: borderRadiusBottom(),
+                }}
               />
             );
           })}
-        </View> */}
+        </View>
       </>
     );
   }
@@ -118,16 +238,17 @@ const VehicleChecklist = ({ navigation }) => {
       );
     }
 
-    function renderImage() {
+    function renderImage(item, index) {
       return (
         <View
+          key={`$img-${index}`}
           style={{
             marginTop: 46,
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <Image source={images.tyre} />
+          <Image source={item.image} />
           <Text
             style={{
               marginTop: 24,
@@ -137,38 +258,17 @@ const VehicleChecklist = ({ navigation }) => {
               fontWeight: "600",
             }}
           >
-            Wheels and Tyres
+            {item.title}
           </Text>
         </View>
       );
     }
 
-    function renderPoints() {
-      const points = [
-        {
-          _id: 1,
-          desc: "Check all tyres are adequately inflated.",
-        },
-        {
-          _id: 2,
-          desc: "Check all tyres tread depth & integrity",
-        },
-        {
-          _id: 3,
-          desc: "Check all wheels are secure",
-        },
-        {
-          _id: 4,
-          desc: "Check all rims for damage",
-        },
-        {
-          _id: 5,
-          desc: "Check triangles, jack & wheels brace are in vehicle",
-        },
-      ];
+    function renderPoints(item, index) {
+      const { points } = item;
 
       return (
-        <View style={{ marginTop: 20, alignSelf: "center" }}>
+        <View style={{ width: 265, marginTop: 20, alignSelf: "center" }}>
           {points.map((point) => (
             <View
               key={point._id}
@@ -216,7 +316,11 @@ const VehicleChecklist = ({ navigation }) => {
             marginHorizontal: 26,
           }}
         >
-          <ChoiceButton disagree text="Broken" />
+          <ChoiceButton
+            disagree
+            text="Broken"
+            onPress={() => console.log(scrollX)}
+          />
           <ChoiceButton text="Acceptable" />
         </View>
       );
@@ -233,7 +337,7 @@ const VehicleChecklist = ({ navigation }) => {
         showsHorizontalScrollIndicator={false}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-          { useNativeDriver: true }
+          { useNativeDriver: false }
         )}
         style={{ width: 327 }}
       >
@@ -245,8 +349,8 @@ const VehicleChecklist = ({ navigation }) => {
             }}
           >
             {renderButtons()}
-            {renderImage()}
-            {renderPoints()}
+            {renderImage(item, index)}
+            {renderPoints(item, index)}
             {renderChoices()}
           </View>
         ))}
