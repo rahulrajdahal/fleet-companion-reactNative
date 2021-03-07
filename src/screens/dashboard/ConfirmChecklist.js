@@ -4,7 +4,7 @@ import { DashboardHeader, LargeButton } from "../../components";
 import { COLORS, images, SIZES } from "../../constants";
 import { Check } from "../../constants/icons";
 
-const ConfirmChecklist = () => {
+const ConfirmChecklist = ({ navigation }) => {
   function renderImage() {
     return (
       <View
@@ -85,10 +85,10 @@ const ConfirmChecklist = () => {
   function renderButton() {
     return (
       <LargeButton
-        onPress={() => console.log("Continue to Sign Off")}
         text="Continue to Sign Off"
         color={COLORS.success}
         textColor={COLORS.white}
+        onPress={() => navigation.navigate("AddSignature")}
         style={{ position: "absolute", bottom: 40 }}
       />
     );
