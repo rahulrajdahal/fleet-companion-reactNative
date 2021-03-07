@@ -22,6 +22,7 @@ export const COLORS = {
   success400: "#88C09B",
   success300: "#B8DAC4",
   success200: "#D0E6D7",
+  success100: "#E8F3EC",
 
   info900: "#04135B",
   info800: "#0F37A4",
@@ -69,7 +70,7 @@ export const COLORS = {
 
 export const SIZES = {
   borderRadius: 10,
-  padding:8,
+  padding: 8,
 
   // font sizes
   h1: 72,

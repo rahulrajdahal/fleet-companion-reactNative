@@ -291,9 +291,9 @@ const VehicleChecklist = () => {
     }
 
     function renderChoices(item, index) {
-      function prevPage() {
-        let node = scrollViewref.current;
+      let node = scrollViewref.current;
 
+      function prevPage() {
         if (index == 0) {
           return navigation.goBack();
         } else if (index == 1) {
@@ -310,10 +310,6 @@ const VehicleChecklist = () => {
       }
 
       function nextPage() {
-        let node = scrollViewref.current;
-
-        console.log(index);
-
         if (index == 0) {
           return node.scrollTo({ x: 327, y: 0 });
         } else if (index == 1) {
