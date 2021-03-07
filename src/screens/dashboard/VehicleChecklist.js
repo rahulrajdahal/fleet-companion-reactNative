@@ -291,9 +291,9 @@ const VehicleChecklist = () => {
     }
 
     function renderChoices(item, index) {
-      let node = scrollViewref.current;
-
       function prevPage() {
+        let node = scrollViewref.current;
+
         if (index == 0) {
           return navigation.goBack();
         } else if (index == 1) {
@@ -310,6 +310,8 @@ const VehicleChecklist = () => {
       }
 
       function nextPage() {
+        let node = scrollViewref.current;
+        
         if (index == 0) {
           return node.scrollTo({ x: 327, y: 0 });
         } else if (index == 1) {
@@ -381,7 +383,10 @@ const VehicleChecklist = () => {
         backgroundColor: COLORS.white,
       }}
     >
-      <DashboardHeader title="Vehicle Checklist" headerRight />
+      <DashboardHeader
+        title="Vehicle Checklist"
+        headerRightTitle="Create Fault"
+      />
       <View
         style={{
           paddingHorizontal: 24,

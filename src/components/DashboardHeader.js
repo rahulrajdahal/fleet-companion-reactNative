@@ -4,7 +4,7 @@ import { COLORS, FONTS, SIZES } from "../constants";
 import { ArrowLeft } from "../constants/icons";
 import { useNavigation } from "@react-navigation/native";
 
-const DashboardHeader = ({ title, headerRight }) => {
+const DashboardHeader = ({ title, headerRightTitle }) => {
   const navigation = useNavigation();
 
   return (
@@ -41,7 +41,7 @@ const DashboardHeader = ({ title, headerRight }) => {
           </Text>
         </View>
 
-        {headerRight ? (
+        {headerRightTitle ? (
           <TouchableOpacity
             onPress={() => console.log("Fault Created")}
             style={{
@@ -61,7 +61,7 @@ const DashboardHeader = ({ title, headerRight }) => {
                 fontFamily: "Manrope",
               }}
             >
-              Create Fault
+              {headerRightTitle}
             </Text>
           </TouchableOpacity>
         ) : null}
