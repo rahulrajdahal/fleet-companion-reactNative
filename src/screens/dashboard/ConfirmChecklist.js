@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import { DashboardHeader } from "../../components";
+import { DashboardHeader, LargeButton } from "../../components";
 import { COLORS, images, SIZES } from "../../constants";
+import { Check } from "../../constants/icons";
 
 const ConfirmChecklist = () => {
   function renderImage() {
@@ -15,6 +16,7 @@ const ConfirmChecklist = () => {
           alignItems: "center",
           justifyContent: "center",
           marginBottom: 33,
+          marginTop: 89,
         }}
       >
         <Image source={images.like} />
@@ -23,10 +25,72 @@ const ConfirmChecklist = () => {
   }
 
   function renderList() {
+    const points = [
+      {
+        _id: 1,
+        title: "Wheels and Tyres",
+      },
+      {
+        _id: 2,
+        title: "Light and Reflectors",
+      },
+      {
+        _id: 3,
+        title: "Windscreen, Mirrors, Wipers and Washers",
+      },
+      {
+        _id: 4,
+        title: "Structural Body & Fluid Systems",
+      },
+      {
+        _id: 5,
+        title: "Brake & Suspension Air Systems",
+      },
+      {
+        _id: 6,
+        title: "Pre-Work Period Housekeeping",
+      },
+    ];
+
     return (
       <View>
-        <Text>List</Text>
+        {points.map((point) => (
+          <View
+            key={point._id}
+            style={{
+              flexDirection: "row",
+              marginBottom: 16,
+            }}
+          >
+            <View
+              style={{
+                width: 20,
+                height: 20,
+                backgroundColor: COLORS.success,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 8,
+                marginRight: 12,
+              }}
+            >
+              <Check />
+            </View>
+            <Text>{point.title}</Text>
+          </View>
+        ))}
       </View>
+    );
+  }
+
+  function renderButton() {
+    return (
+      <LargeButton
+        onPress={() => console.log("Continue to Sign Off")}
+        text="Continue to Sign Off"
+        color={COLORS.success}
+        textColor={COLORS.white}
+        style={{ position: "absolute", bottom: 40 }}
+      />
     );
   }
 
@@ -44,7 +108,6 @@ const ConfirmChecklist = () => {
           flex: 1,
           paddingHorizontal: 24,
           alignItems: "center",
-          justifyContent: "center",
         }}
       >
         {/* Image And Container */}
@@ -52,6 +115,9 @@ const ConfirmChecklist = () => {
 
         {/* Confirmed List */}
         {renderList()}
+
+        {/* Continue Button */}
+        {renderButton()}
       </View>
     </View>
   );
