@@ -94,13 +94,14 @@ const WorkDetails = () => {
       <TouchableOpacity
         onPress={() => console.log("Start")}
         style={{
-          width: 62,
-          height: 32,
+          width: 145,
+          height: 48,
           backgroundColor: COLORS.success,
           alignItems: "center",
           justifyContent: "center",
           borderRadius: SIZES.borderRadius,
           position: "absolute",
+          marginTop: 40,
           bottom: 40,
           alignSelf: "center",
         }}
@@ -108,9 +109,8 @@ const WorkDetails = () => {
         <Text
           style={{
             color: COLORS.white,
-            fontFamily: "Inter",
-            fontSize: 12,
-            lineHeight: 12,
+            fontFamily: "Manrope",
+            ...FONTS.body3,
             fontWeight: "600",
           }}
         >
