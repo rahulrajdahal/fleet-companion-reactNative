@@ -8,7 +8,8 @@ import {
   VehicleSelection,
   VehicleChecklist,
   ConfirmChecklist,
-  AddSignature,
+  SignatureScreen,
+  WorkDetails,
 } from "../screens";
 import { COLORS, FONTS } from "../constants";
 import { View, Text } from "react-native";
@@ -30,7 +31,6 @@ const DashboardStackScreen = () => {
         component={Dashboard}
         options={{ headerShown: false }}
       />
-
       <DashboardStack.Screen
         name="PageOne"
         component={PageOne}
@@ -59,7 +59,6 @@ const DashboardStackScreen = () => {
           headerShown: false,
         }}
       />
-
       <DashboardStack.Screen
         name="VehicleChecklist"
         component={VehicleChecklist}
@@ -75,8 +74,15 @@ const DashboardStackScreen = () => {
         }}
       />
       <DashboardStack.Screen
-        name="AddSignature"
-        component={AddSignature}
+        name="SignatureScreen"
+        component={SignatureScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <DashboardStack.Screen
+        name="WorkDetails"
+        component={WorkDetails}
         options={{
           headerShown: false,
         }}

@@ -13,10 +13,12 @@ import PageThree from "./dashboard/assessment/PageThree";
 import VehicleSelection from "./dashboard/VehicleSelection";
 import VehicleChecklist from "./dashboard/VehicleChecklist";
 import ConfirmChecklist from "./dashboard/ConfirmChecklist";
-import AddSignature from "./dashboard/AddSignature";
+import SignatureScreen from "./dashboard/SignatureScreen";
+import WorkDetails from "./dashboard/WorkDetails";
 
 export {
-  AddSignature,
+  WorkDetails,
+  SignatureScreen,
   ConfirmChecklist,
   VehicleChecklist,
   VehicleSelection,

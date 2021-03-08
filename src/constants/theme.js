@@ -63,6 +63,7 @@ export const COLORS = {
   text500: "#808692",
   text400: "#9A9FA8",
   text300: "#B4B7BE",
+  text100: "#E6E7EA",
 
   // colors
   white: "#FFFFFF",

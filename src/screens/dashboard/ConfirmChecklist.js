@@ -88,7 +88,7 @@ const ConfirmChecklist = ({ navigation }) => {
         text="Continue to Sign Off"
         color={COLORS.success}
         textColor={COLORS.white}
-        onPress={() => navigation.navigate("AddSignature")}
+        onPress={() => navigation.navigate("SignatureScreen")}
         style={{ position: "absolute", bottom: 40 }}
       />
     );
