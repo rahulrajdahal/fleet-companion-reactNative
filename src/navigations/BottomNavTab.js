@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Dashboard, Expense, Profile, Report, WorkDetails } from "../screens";
+import { Dashboard, Expense, OnWork, Profile, Report } from "../screens";
 import { COLORS, FONTS } from "../constants";
 import {
   DashboardIcon,
@@ -38,7 +38,7 @@ const BottomNavTab = () => {
   return (
     <Tab.Navigator tabBarOptions={tabOptions}>
       <Tab.Screen
-        name="DashboardStackScreen"
+        name="Dashboard"
         component={DashboardStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -51,7 +51,7 @@ const BottomNavTab = () => {
 
       <Tab.Screen
         name="Report"
-        component={WorkDetails}
+        component={OnWork}
         options={{
           tabBarIcon: ({ focused }) => (
             <ReportIcon

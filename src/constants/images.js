@@ -9,8 +9,10 @@ export const brakes = require("../../assets/images/brakes.png");
 export const nurse = require("../../assets/images/nurse.png");
 export const like = require("../../assets/images/like.png");
 export const camera = require("../../assets/images/camera.png");
+export const pillow = require("../../assets/images/pillow.png");
 
 export default {
+  pillow,
   camera,
   like,
   nurse,

@@ -10,6 +10,7 @@ import {
   ConfirmChecklist,
   SignatureScreen,
   WorkDetails,
+  OnWork,
 } from "../screens";
 import { COLORS, FONTS } from "../constants";
 import { View, Text } from "react-native";
@@ -83,6 +84,13 @@ const DashboardStackScreen = () => {
       <DashboardStack.Screen
         name="WorkDetails"
         component={WorkDetails}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <DashboardStack.Screen
+        name="OnWork"
+        component={OnWork}
         options={{
           headerShown: false,
         }}

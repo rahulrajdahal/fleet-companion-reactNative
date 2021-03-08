@@ -13,7 +13,7 @@ import { DashboardHeader, Input } from "../../components";
 import { COLORS, FONTS, images, SIZES } from "../../constants";
 import { ModalClose } from "../../constants/icons";
 
-const WorkDetails = () => {
+const WorkDetails = ({ navigation }) => {
   const [modalVisible, setModalVisible] = React.useState(false);
 
   function renderWorkStatus() {
@@ -102,6 +102,11 @@ const WorkDetails = () => {
   }
 
   const renderButton = () => {
+    const submitReading = () => {
+      setModalVisible((modalVisible) => !modalVisible);
+      navigation.navigate("OnWork");
+    };
+
     return (
       <>
         <Modal
@@ -239,7 +244,7 @@ const WorkDetails = () => {
                 bottom: 32,
                 alignSelf: "center",
               }}
-              onPress={() => console.log("pressed")}
+              onPress={submitReading}
             >
               <Text
                 style={{
@@ -249,7 +254,7 @@ const WorkDetails = () => {
                   fontWeight: "600",
                 }}
               >
-                Yes, Create Work
+                Submit Reading
               </Text>
             </Pressable>
           </View>
