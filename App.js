@@ -2,7 +2,13 @@ import React from "react";
 import { View, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
-import { Dashboard, ForgotPassword, Login, ResetPassword } from "./src/screens";
+import {
+  Dashboard,
+  ForgotPassword,
+  Login,
+  OnWork,
+  ResetPassword,
+} from "./src/screens";
 import { BottomNavTab, TopTabNavigator } from "./src/navigations/";
 
 const theme = {
@@ -41,6 +47,11 @@ const App = () => {
         <Stack.Screen
           name="TopTabNavigator"
           component={TopTabNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="OnWork"
+          component={OnWork}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

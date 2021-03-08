@@ -88,13 +88,6 @@ const DashboardStackScreen = () => {
           headerShown: false,
         }}
       />
-      <DashboardStack.Screen
-        name="OnWork"
-        component={OnWork}
-        options={{
-          headerShown: false,
-        }}
-      />
     </DashboardStack.Navigator>
   );
 };

@@ -15,7 +15,7 @@ import VehicleChecklist from "./dashboard/VehicleChecklist";
 import ConfirmChecklist from "./dashboard/ConfirmChecklist";
 import SignatureScreen from "./dashboard/SignatureScreen";
 import WorkDetails from "./dashboard/WorkDetails";
-import OnWork from "./dashboard/OnWork";
+import OnWork from "./OnWork";
 
 export {
   OnWork,

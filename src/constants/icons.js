@@ -10,8 +10,10 @@ import UserIcon from "../../assets/icons/user.svg";
 import ModalClose from "../../assets/icons/modalClose.svg";
 import ArrowLeft from "../../assets/icons/arrow-left.svg";
 import Check from "../../assets/icons/check.svg";
+import Ellipse from "../../assets/icons/ellipse.svg";
 
 export {
+  Ellipse,
   Check,
   ArrowLeft,
   ModalClose,
