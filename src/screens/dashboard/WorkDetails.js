@@ -1,9 +1,21 @@
 import React from "react";
-import { Image, Text, Touchable, TouchableOpacity, View } from "react-native";
-import { DashboardHeader, LargeButton } from "../../components";
+import {
+  Image,
+  Modal,
+  Pressable,
+  Text,
+  TextInput,
+  Touchable,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { DashboardHeader, Input } from "../../components";
 import { COLORS, FONTS, images, SIZES } from "../../constants";
+import { ModalClose } from "../../constants/icons";
 
 const WorkDetails = () => {
+  const [modalVisible, setModalVisible] = React.useState(false);
+
   function renderWorkStatus() {
     return (
       <View
@@ -91,32 +103,184 @@ const WorkDetails = () => {
 
   const renderButton = () => {
     return (
-      <TouchableOpacity
-        onPress={() => console.log("Start")}
-        style={{
-          width: 145,
-          height: 48,
-          backgroundColor: COLORS.success,
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: SIZES.borderRadius,
-          position: "absolute",
-          marginTop: 40,
-          bottom: 40,
-          alignSelf: "center",
-        }}
-      >
-        <Text
+      <>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() =>
+            setModalVisible((modalVisible) => !modalVisible)
+          }
+        >
+          <View
+            style={{
+              width: 327,
+              height: 417,
+              backgroundColor: COLORS.white,
+              borderRadius: 20,
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              paddingHorizontal: 32,
+              paddingTop: 32,
+              paddingBottom: 23,
+              elevation: 5,
+              shadowColor: "rgba(0, 0, 0, 0.2)",
+              shadowOffset: {
+                width: 5,
+                height: 50,
+              },
+              shadowRadius: 50,
+            }}
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "Manrope",
+                  fontWeight: "600",
+                  fontSize: 16,
+                  lineHeight: 16,
+                  color: COLORS.text1000,
+                }}
+              >
+                Speedometer Reading
+              </Text>
+              <ModalClose
+                onPress={() => setModalVisible((modalVisible) => !modalVisible)}
+              />
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginTop: 12,
+              }}
+            >
+              <TextInput
+                style={{
+                  width: 203,
+                  height: 48,
+                  backgroundColor: "rgba(18, 130, 57, 0.05)",
+                  borderRadius: SIZES.borderRadius,
+                  borderWidth: 0.5,
+                  borderColor: COLORS.success300,
+                }}
+                placeholder="Speedometer reading"
+                textAlign="center"
+                keyboardType="number-pad"
+              />
+              <View
+                style={{
+                  width: 48,
+                  height: 48,
+                  backgroundColor: COLORS.success200,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: SIZES.borderRadius,
+                }}
+              >
+                <Image source={images.camera} />
+              </View>
+            </View>
+            <Text
+              style={{
+                color: COLORS.text400,
+                ...FONTS.caption,
+                fontWeight: "600",
+                fontFamily: "Manrope",
+                marginTop: 8,
+              }}
+            >
+              Current: 20,811mi (2 days ago)
+            </Text>
+
+            <View style={{ marginTop: 24 }}>
+              <Text
+                style={{
+                  color: COLORS.primary,
+                  ...FONTS.body3,
+                  fontWeight: "600",
+                  fontFamily: "Manrope",
+                }}
+              >
+                Remarks (optional)
+              </Text>
+
+              <TextInput
+                style={{
+                  width: 263,
+                  height: 141,
+                  borderRadius: SIZES.borderRadius,
+                  borderWidth: 0.5,
+                  borderColor: COLORS.success300,
+                  backgroundColor: "#F3F9F5",
+                  marginTop: 6,
+                }}
+              />
+            </View>
+
+            <Pressable
+              style={{
+                width: 181,
+                height: 48,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: COLORS.success,
+                borderRadius: SIZES.borderRadius,
+                position: "absolute",
+                bottom: 32,
+                alignSelf: "center",
+              }}
+              onPress={() => console.log("pressed")}
+            >
+              <Text
+                style={{
+                  color: COLORS.white,
+                  ...FONTS.body3,
+                  fontFamily: "Manrope",
+                  fontWeight: "600",
+                }}
+              >
+                Yes, Create Work
+              </Text>
+            </Pressable>
+          </View>
+        </Modal>
+        <TouchableOpacity
+          onPress={() => setModalVisible((modalVisible) => !modalVisible)}
           style={{
-            color: COLORS.white,
-            fontFamily: "Manrope",
-            ...FONTS.body3,
-            fontWeight: "600",
+            width: 145,
+            height: 48,
+            backgroundColor: COLORS.success,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: SIZES.borderRadius,
+            position: "absolute",
+            marginTop: 40,
+            bottom: 40,
+            alignSelf: "center",
           }}
         >
-          Start
-        </Text>
-      </TouchableOpacity>
+          <Text
+            style={{
+              color: COLORS.white,
+              fontFamily: "Manrope",
+              ...FONTS.body3,
+              fontWeight: "600",
+            }}
+          >
+            Start
+          </Text>
+        </TouchableOpacity>
+      </>
     );
   };
 

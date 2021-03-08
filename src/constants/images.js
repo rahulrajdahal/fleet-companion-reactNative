@@ -8,8 +8,10 @@ export const miniTruck = require("../../assets/images/mini-truck.png");
 export const brakes = require("../../assets/images/brakes.png");
 export const nurse = require("../../assets/images/nurse.png");
 export const like = require("../../assets/images/like.png");
+export const camera = require("../../assets/images/camera.png");
 
 export default {
+  camera,
   like,
   nurse,
   brakes,

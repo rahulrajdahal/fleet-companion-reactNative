@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Dashboard, Expense, Profile, Report } from "../screens";
+import { Dashboard, Expense, Profile, Report, WorkDetails } from "../screens";
 import { COLORS, FONTS } from "../constants";
 import {
   DashboardIcon,
@@ -51,7 +51,7 @@ const BottomNavTab = () => {
 
       <Tab.Screen
         name="Report"
-        component={Report}
+        component={WorkDetails}
         options={{
           tabBarIcon: ({ focused }) => (
             <ReportIcon
