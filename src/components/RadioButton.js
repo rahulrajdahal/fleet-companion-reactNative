@@ -1,8 +1,12 @@
 import React from "react";
 import { Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { COLORS, FONTS } from "../constants";
+import { Check } from "../constants/icons";
 
 const RadioButton = () => {
+  const [selected, setSelected] = React.useState(false);
+
   return (
     <View
       style={{
@@ -22,17 +26,52 @@ const RadioButton = () => {
         Party at Fault?
       </Text>
 
-      <View style={{ flexDirection: "row" }}>
-        <View
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        {!selected ? (
+          <TouchableOpacity
+            onPress={() => setSelected((selected) => !selected)}
+            style={{
+              width: 20,
+              height: 20,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: COLORS.success,
+              borderRadius: 8,
+              marginRight: 8,
+            }}
+          >
+            <Check />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            onPress={() => setSelected((selected) => !selected)}
+            style={{
+              width: 20,
+              height: 20,
+              borderWidth: 1.5,
+              borderRadius: 8,
+              borderColor: COLORS.success,
+              marginRight: 8,
+            }}
+          />
+        )}
+
+        <Text
           style={{
-            width: 20,
-            height: 20,
-            borderWidth: 1.5,
-            borderRadius: 8,
-            borderColor: COLORS.success,
+            color: COLORS.text900,
+            ...FONTS.body3,
+            fontWeight: "normal",
+            fontFamily: "Manrope",
           }}
-        />
-        <Text>Self</Text>
+        >
+          Self
+        </Text>
       </View>
 
       <View
@@ -42,17 +81,44 @@ const RadioButton = () => {
           justifyContent: "space-between",
         }}
       >
-        <View
+        {selected ? (
+          <TouchableOpacity
+            onPress={() => setSelected((selected) => !selected)}
+            style={{
+              width: 20,
+              height: 20,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: COLORS.success,
+              borderRadius: 8,
+              marginRight: 8,
+            }}
+          >
+            <Check />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            onPress={() => setSelected((selected) => !selected)}
+            style={{
+              width: 20,
+              height: 20,
+              borderWidth: 1.5,
+              borderRadius: 8,
+              borderColor: COLORS.success,
+              marginRight: 8,
+            }}
+          />
+        )}
+        <Text
           style={{
-            width: 20,
-            height: 20,
-            borderWidth: 1.5,
-            borderRadius: 8,
-            borderColor: COLORS.success,
-            marginRight: 8,
+            color: COLORS.text900,
+            ...FONTS.body3,
+            fontWeight: "normal",
+            fontFamily: "Manrope",
           }}
-        />
-        <Text>Other Party</Text>
+        >
+          Other Party
+        </Text>
       </View>
     </View>
   );
