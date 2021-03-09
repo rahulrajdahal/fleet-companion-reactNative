@@ -1,9 +1,20 @@
 import React from "react";
-import { FlatList, Image, Text, View } from "react-native";
-import { Ellipse } from "../constants/icons";
+import {
+  FlatList,
+  Image,
+  Text,
+  View,
+  Modal,
+  Pressable,
+  TouchableOpacity,
+} from "react-native";
+import { Ellipse, ModalClose } from "../constants/icons";
 import { COLORS, FONTS, images, SIZES } from "../constants";
 
 const OnWork = () => {
+  const [modalVisible, setModalVisible] = React.useState(false);
+  const [restModal, setRestModal] = React.useState(false);
+
   function renderTimerContainer() {
     return (
       <View
@@ -13,6 +24,7 @@ const OnWork = () => {
           backgroundColor: COLORS.success,
           alignItems: "center",
           justifyContent: "center",
+          opacity: modalVisible || restModal ? 0.5 : 1,
         }}
       >
         <View
@@ -61,6 +73,7 @@ const OnWork = () => {
           width: 180,
           height: 180,
           backgroundColor: COLORS.white,
+          opacity: modalVisible || restModal ? 0.3 : 1,
           borderWidth: 1,
           borderColor: COLORS.success200,
           borderRadius: 100,
@@ -208,67 +221,278 @@ const OnWork = () => {
 
   function renderButtons() {
     return (
-      <View
-        style={{
-          flexDirection: "row",
-          paddingTop: 24,
-          alignItems: "center",
-          justifyContent: "space-between",
-          position: "absolute",
-          bottom: 40,
-          alignSelf: "center",
-          paddingHorizontal: 24,
-        }}
-      >
-        <View
-          style={{
-            width: 130,
-            height: 48,
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: COLORS.success200,
-            borderRadius: SIZES.borderRadius,
-            marginRight: 14,
-          }}
+      <>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() =>
+            setModalVisible((modalVisible) => !modalVisible)
+          }
         >
-          <Text
+          <View
             style={{
-              color: COLORS.success,
-              ...FONTS.body3,
-              fontWeight: "600",
-              fontFamily: "Manrope",
+              width: 327,
+              height: 195,
+              backgroundColor: COLORS.white,
+              borderRadius: 20,
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              paddingHorizontal: 32,
+              paddingTop: 32,
+              paddingBottom: 23,
+              elevation: 5,
+              shadowColor: "rgba(0, 0, 0, 0.2)",
+              shadowOffset: {
+                width: 5,
+                height: 50,
+              },
+              shadowRadius: 50,
             }}
           >
-            Take Rest
-          </Text>
-        </View>
-        <View
-          style={{
-            width: 173,
-            height: 48,
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: COLORS.success,
-            borderRadius: SIZES.borderRadius,
-          }}
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "Manrope",
+                  fontWeight: "600",
+                  fontSize: 16,
+                  lineHeight: 16,
+                  color: COLORS.text1000,
+                }}
+              >
+                Finish Work?
+              </Text>
+              <ModalClose
+                onPress={() => setModalVisible((modalVisible) => !modalVisible)}
+              />
+            </View>
+            <Text
+              style={{
+                marginTop: 12,
+                width: 239,
+                color: COLORS.text500,
+                ...FONTS.body3,
+                lineHeight: 20,
+              }}
+            >
+              Are you sure you want to finish your work? This cannot be undone.
+            </Text>
+
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginTop: 24,
+              }}
+            >
+              <Pressable
+                onPress={() => setModalVisible((modalVisible) => !modalVisible)}
+              >
+                <Text>Cancel</Text>
+              </Pressable>
+              <Pressable
+                style={{
+                  width: 181,
+                  height: 48,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: COLORS.success,
+                  borderRadius: SIZES.borderRadius,
+                }}
+                onPress={() => console.log("Finish Work")}
+              >
+                <Text
+                  style={{
+                    color: COLORS.white,
+                    ...FONTS.body3,
+                    fontFamily: "Manrope",
+                    fontWeight: "600",
+                  }}
+                >
+                  Yes, Finish Work
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
+
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={restModal}
+          onRequestClose={() => setRestModal((restModal) => !restModal)}
         >
-          <Text
+          <View
             style={{
-              color: COLORS.white,
-              ...FONTS.body3,
-              fontWeight: "600",
-              fontFamily: "Manrope",
+              width: 317,
+              height: 328,
+              backgroundColor: COLORS.white,
+              borderRadius: 20,
+              alignItems: "center",
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              paddingHorizontal: 32,
+              paddingTop: 32,
+              paddingBottom: 23,
+              elevation: 5,
+              shadowColor: "rgba(0, 0, 0, 0.2)",
+              shadowOffset: {
+                width: 5,
+                height: 50,
+              },
+              shadowRadius: 50,
             }}
           >
-            Take Rest
-          </Text>
+            <Text
+              style={{
+                fontFamily: "Manrope",
+                fontWeight: "600",
+                ...FONTS.body2,
+                color: COLORS.text1000,
+              }}
+            >
+              Break Time
+            </Text>
+
+            <View
+              style={{
+                width: 69.8,
+                height: 72,
+                backgroundColor: COLORS.success200,
+                borderRadius: 100,
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: 24,
+              }}
+            >
+              <Image
+                source={images.directorsChair}
+                style={{ width: 34.9, height: 36 }}
+              />
+            </View>
+
+            <Text
+              style={{
+                marginTop: 12,
+                width: 239,
+                color: COLORS.text500,
+                ...FONTS.body3,
+                lineHeight: 20,
+              }}
+            >
+              You have been driving for more than 5 hours continously. Please
+              take a break immediately.
+            </Text>
+
+            <Pressable
+              style={{
+                width: 181,
+                height: 48,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: COLORS.success,
+                borderRadius: SIZES.borderRadius,
+                position: "absolute",
+                bottom: 32,
+              }}
+              onPress={() => setRestModal((restModal) => !restModal)}
+            >
+              <Text
+                style={{
+                  color: COLORS.white,
+                  ...FONTS.body3,
+                  fontFamily: "Manrope",
+                  fontWeight: "600",
+                }}
+              >
+                Sure, Will Do
+              </Text>
+            </Pressable>
+          </View>
+        </Modal>
+
+        <View
+          style={{
+            flexDirection: "row",
+            paddingTop: 24,
+            alignItems: "center",
+            justifyContent: "space-between",
+            position: "absolute",
+            bottom: 40,
+            alignSelf: "center",
+            paddingHorizontal: 24,
+            opacity: modalVisible || restModal ? 0.8 : 1,
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              width: 130,
+              height: 48,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: COLORS.success200,
+              borderRadius: SIZES.borderRadius,
+              marginRight: 14,
+            }}
+            onPress={() => setRestModal(true)}
+          >
+            <Text
+              style={{
+                color: COLORS.success,
+                ...FONTS.body3,
+                fontWeight: "600",
+                fontFamily: "Manrope",
+              }}
+            >
+              Take Rest
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              width: 173,
+              height: 48,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: COLORS.success,
+              borderRadius: SIZES.borderRadius,
+            }}
+            onPress={() => setModalVisible(true)}
+          >
+            <Text
+              style={{
+                color: COLORS.white,
+                ...FONTS.body3,
+                fontWeight: "600",
+                fontFamily: "Manrope",
+              }}
+            >
+              Finish Work
+            </Text>
+          </TouchableOpacity>
         </View>
-      </View>
+      </>
     );
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: COLORS.white }}>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor:
+          modalVisible || restModal ? "rgba(2, 14, 38, 0.15)" : COLORS.white,
+      }}
+    >
       {/* Timer Container */}
       {renderTimerContainer()}
 
