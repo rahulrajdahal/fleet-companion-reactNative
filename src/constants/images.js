@@ -13,8 +13,14 @@ export const pillow = require("../../assets/images/pillow.png");
 export const racingFlag = require("../../assets/images/racing-flag.png");
 export const directorsChair = require("../../assets/images/directors-chair.png");
 export const steeringWheel = require("../../assets/images/steering-wheel.png");
+export const deliveryTruck = require("../../assets/images/delivery-truck.png");
+export const shipping = require("../../assets/images/shipping.png");
+export const complaint = require("../../assets/images/complaint.png");
 
 export default {
+  complaint,
+  shipping,
+  deliveryTruck,
   steeringWheel,
   directorsChair,
   racingFlag,

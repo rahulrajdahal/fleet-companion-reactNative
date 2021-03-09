@@ -34,7 +34,7 @@ const Navbar = () => {
           backgroundColor: COLORS.danger,
           borderRadius: 10,
           bottom: 9,
-          left: 27,
+          left: 35,
           zIndex: 1,
         }}
       />

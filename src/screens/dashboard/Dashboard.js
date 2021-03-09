@@ -410,7 +410,6 @@ const Dashboard = ({ navigation }) => {
       style={{
         flex: 1,
         alignItems: "center",
-        justifyContent: "center",
         backgroundColor: modalVisible ? "rgba(2, 14, 38, 0.15)" : COLORS.white,
         paddingHorizontal: 24,
       }}
