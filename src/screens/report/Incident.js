@@ -1,6 +1,6 @@
 import React from "react";
-import { Text, TextInput, View } from "react-native";
-import { Input, Navbar } from "../../components";
+import { ScrollView, Text, TextInput, View } from "react-native";
+import { Input, Navbar, RadioButton } from "../../components";
 import { COLORS, FONTS, SIZES } from "../../constants";
 
 const Incident = () => {
@@ -53,6 +53,14 @@ const Incident = () => {
           style={{ marginBottom: 40 }}
           inputStyle={{ height: 144 }}
         />
+
+        <Input
+          text="Related Person"
+          placeholder="Mr. Someone Else"
+          style={{ marginBottom: 40 }}
+        />
+
+        <RadioButton />
       </View>
     );
   }
@@ -63,11 +71,13 @@ const Incident = () => {
     >
       <Navbar />
 
-      {/* Title / SubText */}
-      {renderTitle()}
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/* Title / SubText */}
+        {renderTitle()}
 
-      {/* Form */}
-      {renderForm()}
+        {/* Form */}
+        {renderForm()}
+      </ScrollView>
     </View>
   );
 };

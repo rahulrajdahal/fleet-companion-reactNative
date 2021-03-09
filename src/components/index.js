@@ -7,8 +7,10 @@ import DashboardHeader from "./DashboardHeader";
 import AddButton from "./AddButton";
 import Sign from "./Sign";
 import Navbar from "./Navbar";
+import RadioButton from "./RadioButton";
 
 export {
+  RadioButton,
   Navbar,
   Sign,
   AddButton,
