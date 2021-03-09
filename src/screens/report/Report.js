@@ -1,8 +1,9 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
-import { Navbar } from "../components";
-import { COLORS, FONTS, images } from "../constants";
-import { ArrowRight } from "../constants/icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Navbar } from "../../components";
+import { COLORS, FONTS, images } from "../../constants";
+import { ArrowRight } from "../../constants/icons";
 const Report = () => {
   function renderTitle() {
     return (
@@ -45,7 +46,8 @@ const Report = () => {
         }}
       >
         {reports.map((report) => (
-          <View
+          <TouchableOpacity
+            key={report._id}
             style={{
               width: 156,
               height: 208,
@@ -55,6 +57,7 @@ const Report = () => {
               justifyContent: "center",
               marginTop: 24,
             }}
+            onPress={() => console.log("dfs")}
           >
             <View style={{ flexDirection: "row", marginBottom: 32 }}>
               <Image source={report.image} />
@@ -87,7 +90,7 @@ const Report = () => {
                 <ArrowRight />
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
     );
@@ -108,8 +111,6 @@ const Report = () => {
 
       {/* Report */}
       {renderReport()}
-
-      <Text>Report Screen</Text>
     </View>
   );
 };
