@@ -1,7 +1,7 @@
 import React from "react";
-import { ScrollView, Text, TextInput, View } from "react-native";
-import { Input, Navbar, RadioButton } from "../../components";
-import { COLORS, FONTS, SIZES } from "../../constants";
+import { Image, ScrollView, Text, TextInput, View } from "react-native";
+import { Input, LargeButton, Navbar, RadioButton } from "../../components";
+import { COLORS, FONTS, images, SIZES } from "../../constants";
 
 const Incident = () => {
   const renderTitle = () => {
@@ -61,7 +61,93 @@ const Incident = () => {
         />
 
         <RadioButton />
+
+        <View style={{ marginTop: 40 }}>
+          <Text
+            style={{
+              color: COLORS.primary,
+              ...FONTS.body3,
+              fontWeight: "600",
+              fontFamily: "Manrope",
+            }}
+          >
+            Choose a Photo
+          </Text>
+
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginTop: 6,
+            }}
+          >
+            <View
+              style={{
+                width: 156,
+                height: 159,
+                borderWidth: 1,
+                borderStyle: "dashed",
+                borderColor: COLORS.success,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: SIZES.borderRadius,
+                backgroundColor: "rgba(18, 130, 57, 0.05)",
+              }}
+            >
+              <Image source={images.camera} style={{ width: 48, height: 48 }} />
+              <Text
+                style={{
+                  color: COLORS.success,
+                  ...FONTS.caption,
+                  marginTop: 12,
+                }}
+              >
+                Launch Camera
+              </Text>
+            </View>
+
+            <View
+              style={{
+                width: 156,
+                height: 159,
+                borderWidth: 1,
+                borderStyle: "dashed",
+                borderColor: COLORS.success,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: SIZES.borderRadius,
+                backgroundColor: "rgba(18, 130, 57, 0.05)",
+              }}
+            >
+              <Image
+                source={images.gallery}
+                style={{ width: 48, height: 48 }}
+              />
+              <Text
+                style={{
+                  color: COLORS.success,
+                  ...FONTS.caption,
+                  marginTop: 12,
+                }}
+              >
+                Upload from Gallery
+              </Text>
+            </View>
+          </View>
+        </View>
       </View>
+    );
+  }
+
+  function renderButton() {
+    return (
+      <LargeButton
+        text="Report this Incident"
+        color={COLORS.success}
+        textColor={COLORS.white}
+        style={{ marginTop: 40, marginBottom: 40 }}
+      />
     );
   }
 
@@ -77,6 +163,9 @@ const Incident = () => {
 
         {/* Form */}
         {renderForm()}
+
+        {/* Button */}
+        {renderButton()}
       </ScrollView>
     </View>
   );
