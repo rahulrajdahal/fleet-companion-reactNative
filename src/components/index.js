@@ -6,8 +6,10 @@ import ChoiceButton from "./ChoiceButton";
 import DashboardHeader from "./DashboardHeader";
 import AddButton from "./AddButton";
 import Sign from "./Sign";
+import Navbar from "./Navbar";
 
 export {
+  Navbar,
   Sign,
   AddButton,
   DashboardHeader,

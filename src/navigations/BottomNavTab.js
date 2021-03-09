@@ -51,7 +51,7 @@ const BottomNavTab = () => {
 
       <Tab.Screen
         name="Report"
-        component={OnWork}
+        component={Report}
         options={{
           tabBarIcon: ({ focused }) => (
             <ReportIcon
