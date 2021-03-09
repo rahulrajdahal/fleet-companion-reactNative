@@ -18,13 +18,6 @@ import { View, Text } from "react-native";
 const DashboardStack = createStackNavigator();
 
 const DashboardStackScreen = () => {
-  const headerTitleStyle = {
-    ...FONTS.body2,
-    fontFamily: "Manrope",
-    color: COLORS.text900,
-    fontWeight: "bold",
-  };
-
   return (
     <DashboardStack.Navigator>
       <DashboardStack.Screen

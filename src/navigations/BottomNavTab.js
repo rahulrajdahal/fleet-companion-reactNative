@@ -8,7 +8,7 @@ import {
   ExpenseIcon,
   UserIcon,
 } from "../constants/icons";
-import { DashboardStackScreen } from ".";
+import { DashboardStackScreen, ReportStackScreen } from ".";
 
 const Tab = createBottomTabNavigator();
 
@@ -51,7 +51,7 @@ const BottomNavTab = () => {
 
       <Tab.Screen
         name="Report"
-        component={Report}
+        component={ReportStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <ReportIcon

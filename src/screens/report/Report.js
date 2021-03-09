@@ -4,7 +4,8 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Navbar } from "../../components";
 import { COLORS, FONTS, images } from "../../constants";
 import { ArrowRight } from "../../constants/icons";
-const Report = () => {
+
+const Report = ({ navigation }) => {
   function renderTitle() {
     return (
       <View>
@@ -29,11 +30,13 @@ const Report = () => {
         image: images.shipping,
         image2: images.deliveryTruck,
         title: "Report an Incident",
+        navTo: "Incident",
       },
       {
         _id: 2,
         image: images.complaint,
         title: "Report a Fault",
+        navTo: "Incident",
       },
     ];
 
@@ -57,7 +60,7 @@ const Report = () => {
               justifyContent: "center",
               marginTop: 24,
             }}
-            onPress={() => console.log("dfs")}
+            onPress={() => navigation.navigate(report.navTo)}
           >
             <View style={{ flexDirection: "row", marginBottom: 32 }}>
               <Image source={report.image} />

@@ -3,7 +3,7 @@ import { View, Text, TextInput } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants";
 import { useForm } from "react-hook-form";
 
-const Input = ({ text, placeholder, style }) => {
+const Input = ({ text, placeholder, style, inputStyle }) => {
   const { handleSubmit, register, errors, setValue } = useForm();
   const onSubmit = (values) => console.log(values);
 
@@ -44,6 +44,7 @@ const Input = ({ text, placeholder, style }) => {
           alignItems: "center",
           paddingVertical: 16,
           paddingLeft: 16,
+          ...inputStyle,
         }}
       >
         <TextInput

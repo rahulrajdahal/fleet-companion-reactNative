@@ -16,8 +16,10 @@ import ConfirmChecklist from "./dashboard/ConfirmChecklist";
 import SignatureScreen from "./dashboard/SignatureScreen";
 import WorkDetails from "./dashboard/WorkDetails";
 import OnWork from "./OnWork";
+import Incident from "./report/Incident";
 
 export {
+  Incident,
   OnWork,
   WorkDetails,
   SignatureScreen,
