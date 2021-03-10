@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Incident, Report } from "../screens";
+import { Fault, Incident, Report } from "../screens";
 
 const ReportStack = createStackNavigator();
 
@@ -17,6 +17,12 @@ const ReportStackScreen = () => {
       <ReportStack.Screen
         name="Incident"
         component={Incident}
+        options={{ headerShown: false }}
+      />
+
+      <ReportStack.Screen
+        name="Fault"
+        component={Fault}
         options={{ headerShown: false }}
       />
     </ReportStack.Navigator>

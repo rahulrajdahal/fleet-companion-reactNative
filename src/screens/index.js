@@ -17,8 +17,10 @@ import SignatureScreen from "./dashboard/SignatureScreen";
 import WorkDetails from "./dashboard/WorkDetails";
 import OnWork from "./OnWork";
 import Incident from "./report/Incident";
+import Fault from "./report/Fault";
 
 export {
+  Fault,
   Incident,
   OnWork,
   WorkDetails,

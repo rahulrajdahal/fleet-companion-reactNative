@@ -36,7 +36,7 @@ const Report = ({ navigation }) => {
         _id: 2,
         image: images.complaint,
         title: "Report a Fault",
-        navTo: "Incident",
+        navTo: "Fault",
       },
     ];
 
