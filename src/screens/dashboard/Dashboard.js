@@ -399,7 +399,7 @@ const Dashboard = ({ navigation }) => {
           }}
           onPress={() => setModalVisible(true)}
         >
-          <Plus />
+          <Plus style={{ color: COLORS.white }} />
         </TouchableOpacity>
       </>
     );

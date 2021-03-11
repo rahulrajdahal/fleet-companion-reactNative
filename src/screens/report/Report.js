@@ -90,7 +90,7 @@ const Report = ({ navigation }) => {
                   borderRadius: 15,
                 }}
               >
-                <ArrowRight />
+                <ArrowRight style={{ color: COLORS.white }} />
               </View>
             </View>
           </TouchableOpacity>

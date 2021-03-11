@@ -11,10 +11,10 @@ const Accordion = ({ title, body }) => {
       style={{
         flexDirection: "row",
         alignItems: "flex-start",
-        marginBottom: expanded ? 24 : 0,
+        marginBottom: 24,
         backgroundColor: expanded ? "rgba(18, 130, 57, 0.05)" : COLORS.white,
         borderRadius: SIZES.borderRadius,
-        paddingVertical: 16,
+        paddingVertical: expanded ? 16 : 0,
         paddingHorizontal: 17,
         width: 368,
       }}

@@ -25,7 +25,8 @@ const Expense = ({ navigation }) => {
 
   function renderFuelExpense() {
     return (
-      <View
+      <TouchableOpacity
+        onPress={() => navigation.navigate("FuelExpense")}
         style={{
           marginTop: 24,
           width: 327,
@@ -57,8 +58,7 @@ const Expense = ({ navigation }) => {
             Record Fuel Expense
           </Text>
         </View>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("FuelExpense")}
+        <View
           style={{
             width: 40,
             height: 40,
@@ -69,9 +69,9 @@ const Expense = ({ navigation }) => {
             marginLeft: 46,
           }}
         >
-          <ArrowRight />
-        </TouchableOpacity>
-      </View>
+          <ArrowRight style={{ color: COLORS.white }} />
+        </View>
+      </TouchableOpacity>
     );
   }
 
