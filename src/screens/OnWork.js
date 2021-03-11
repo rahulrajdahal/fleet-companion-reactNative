@@ -11,7 +11,7 @@ import {
 import { Ellipse, ModalClose } from "../constants/icons";
 import { COLORS, FONTS, images, SIZES } from "../constants";
 
-const OnWork = () => {
+const OnWork = ({ navigation }) => {
   const [modalVisible, setModalVisible] = React.useState(false);
   const [restModal, setRestModal] = React.useState(false);
 
@@ -309,7 +309,7 @@ const OnWork = () => {
                   backgroundColor: COLORS.success,
                   borderRadius: SIZES.borderRadius,
                 }}
-                onPress={() => console.log("Finish Work")}
+                onPress={() => navigation.navigate("Dashboard")}
               >
                 <Text
                   style={{

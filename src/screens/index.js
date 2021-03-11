@@ -20,9 +20,11 @@ import Incident from "./report/Incident";
 import Fault from "./report/Fault";
 import FuelExpense from "./expense/FuelExpense";
 import Settings from "./profile/Settings";
+import General from "./profile/General";
 
 export {
   Settings,
+  General,
   FuelExpense,
   Fault,
   Incident,
