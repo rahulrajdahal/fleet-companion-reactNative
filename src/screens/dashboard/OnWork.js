@@ -8,8 +8,8 @@ import {
   Pressable,
   TouchableOpacity,
 } from "react-native";
-import { Ellipse, ModalClose } from "../constants/icons";
-import { COLORS, FONTS, images, SIZES } from "../constants";
+import { Ellipse, ModalClose } from "../../constants/icons";
+import { COLORS, FONTS, images, SIZES } from "../../constants";
 
 const OnWork = ({ navigation }) => {
   const [modalVisible, setModalVisible] = React.useState(false);
