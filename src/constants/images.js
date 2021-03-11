@@ -39,3 +39,7 @@ export default {
   sideMirror,
   miniTruck,
 };
+
+import ProfileImage from "../../assets/images/profile.svg";
+
+export { ProfileImage };

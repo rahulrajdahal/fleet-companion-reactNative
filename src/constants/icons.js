@@ -12,8 +12,14 @@ import ArrowLeft from "../../assets/icons/arrow-left.svg";
 import ArrowRight from "../../assets/icons/arrow-right.svg";
 import Check from "../../assets/icons/check.svg";
 import Ellipse from "../../assets/icons/ellipse.svg";
+import Folder from "../../assets/icons/folder.svg";
+import Settings from "../../assets/icons/settings.svg";
+import LifeRing from "../../assets/icons/life-ring.svg";
 
 export {
+  Settings,
+  LifeRing,
+  Folder,
   ArrowRight,
   Ellipse,
   Check,
