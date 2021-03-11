@@ -16,8 +16,10 @@ export const steeringWheel = require("../../assets/images/steering-wheel.png");
 export const deliveryTruck = require("../../assets/images/delivery-truck.png");
 export const shipping = require("../../assets/images/shipping.png");
 export const complaint = require("../../assets/images/complaint.png");
+export const gasStation = require("../../assets/images/gas-station.png");
 
 export default {
+  gasStation,
   complaint,
   shipping,
   deliveryTruck,
