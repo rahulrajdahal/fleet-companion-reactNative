@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { WorkCard } from "../components";
-import { COLORS } from "../constants";
+import { WorkCard } from "../../components";
+import { COLORS } from "../../constants";
 
 const ActiveWork = ({ modalVisible }) => {
   return (
