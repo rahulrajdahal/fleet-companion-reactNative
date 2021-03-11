@@ -16,53 +16,13 @@ import {
   VictoryPie,
   VictoryTheme,
 } from "victory-native";
-import { TimeCard, WorkCard } from "../../components";
+import { Navbar, TimeCard, WorkCard } from "../../components";
 import { FONTS, COLORS, SIZES } from "../../constants";
 import { Logo, Menu, Chat, Plus, ModalClose } from "../../constants/icons";
 import TopTabNavigator from "../../navigations/TopTabNavigator";
 
 const Dashboard = ({ navigation }) => {
   const [modalVisible, setModalVisible] = React.useState(false);
-
-  function renderNavbar() {
-    return (
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginTop: 36,
-        }}
-      >
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginRight: 228.08,
-            alignSelf: "flex-start",
-          }}
-        >
-          <Menu style={{ marginRight: 14 }} />
-          <Logo width="33.59" height="24" />
-        </View>
-        <View
-          style={{
-            width: 10,
-            height: 10,
-            backgroundColor: COLORS.danger,
-            borderRadius: 10,
-            bottom: 9,
-            left: 27,
-            zIndex: 1,
-          }}
-        />
-        <Chat style={{ alignSelf: "flex-end" }} />
-      </View>
-    );
-  }
 
   function renderPieChart() {
     const data = [
@@ -92,6 +52,7 @@ const Dashboard = ({ navigation }) => {
     return (
       <View
         style={{
+          alignSelf: "center",
           width: 327,
           height: 177,
           backgroundColor: "rgba(21, 72, 191, 0.05)",
@@ -186,6 +147,7 @@ const Dashboard = ({ navigation }) => {
     return (
       <View
         style={{
+          alignSelf: "center",
           width: 327,
           height: 217,
           backgroundColor: "rgba(18, 130, 57, 0.05)",
@@ -248,6 +210,7 @@ const Dashboard = ({ navigation }) => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
+          alignSelf: "center",
         }}
       >
         <TimeCard
@@ -409,13 +372,12 @@ const Dashboard = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        alignItems: "center",
         backgroundColor: modalVisible ? "rgba(2, 14, 38, 0.15)" : COLORS.white,
         paddingHorizontal: 24,
       }}
     >
-      {/* Navbar  */}
-      {renderNavbar()}
+      <Navbar />
+
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{ marginTop: 32 }}
@@ -429,7 +391,7 @@ const Dashboard = ({ navigation }) => {
         {/* Time Card */}
         {renderTimeCard()}
 
-        <View style={{ width: 327 }}>
+        <View style={{ width: 327, alignSelf: "center" }}>
           <TopTabNavigator modalVisible={modalVisible} />
         </View>
       </ScrollView>
