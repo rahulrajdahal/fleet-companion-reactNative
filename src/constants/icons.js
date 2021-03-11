@@ -15,8 +15,14 @@ import Ellipse from "../../assets/icons/ellipse.svg";
 import Folder from "../../assets/icons/folder.svg";
 import Settings from "../../assets/icons/settings.svg";
 import LifeRing from "../../assets/icons/life-ring.svg";
+import Pdf from "../../assets/icons/pdf.svg";
+import Jpg from "../../assets/icons/jpg.svg";
+import DownloadLine from "../../assets/icons/download-line.svg";
 
 export {
+  Jpg,
+  DownloadLine,
+  Pdf,
   Settings,
   LifeRing,
   Folder,
