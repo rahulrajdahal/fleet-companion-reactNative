@@ -21,8 +21,10 @@ import Fault from "./report/Fault";
 import FuelExpense from "./expense/FuelExpense";
 import Settings from "./profile/Settings";
 import General from "./profile/General";
+import Notifications from "./profile/Notifications";
 
 export {
+  Notifications,
   Settings,
   General,
   FuelExpense,
