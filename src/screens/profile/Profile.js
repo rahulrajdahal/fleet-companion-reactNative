@@ -44,7 +44,7 @@ const Profile = ({ navigation }) => {
         title: "Help Center",
         body: "Access the Help Center for FAQ or contact Support.",
         backgroundColor: COLORS.danger100,
-        navTo: "Settings",
+        navTo: "HelpCenter",
       },
     ];
 

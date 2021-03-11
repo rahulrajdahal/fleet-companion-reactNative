@@ -9,8 +9,10 @@ import Sign from "./Sign";
 import Navbar from "./Navbar";
 import RadioButton from "./RadioButton";
 import ToggleButton from "./ToggleButton";
+import Accordion from "./Accordion";
 
 export {
+  Accordion,
   ToggleButton,
   RadioButton,
   Navbar,

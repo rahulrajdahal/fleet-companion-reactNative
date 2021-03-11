@@ -18,8 +18,12 @@ import LifeRing from "../../assets/icons/life-ring.svg";
 import Pdf from "../../assets/icons/pdf.svg";
 import Jpg from "../../assets/icons/jpg.svg";
 import DownloadLine from "../../assets/icons/download-line.svg";
+import AddCircle from "../../assets/icons/add-circle.svg";
+import AddCircleActive from "../../assets/icons/add-circle-active.svg";
 
 export {
+  AddCircleActive,
+  AddCircle,
   Jpg,
   DownloadLine,
   Pdf,
