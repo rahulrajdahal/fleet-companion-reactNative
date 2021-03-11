@@ -27,7 +27,7 @@ const Profile = ({ navigation }) => {
         title: "My Documents",
         body: "All your important documents in one convenient location.",
         backgroundColor: COLORS.info100,
-        navTo: "Settings",
+        navTo: "Documents",
       },
       {
         _id: 2,

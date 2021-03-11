@@ -1,7 +1,13 @@
 import React from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
-import { General, Notifications, Profile, Settings } from "../screens";
+import {
+  General,
+  Notifications,
+  Profile,
+  Settings,
+  Documents,
+} from "../screens";
 
 const ProfileStack = createStackNavigator();
 
@@ -26,6 +32,11 @@ const ProfileStackScreen = () => {
       <ProfileStack.Screen
         name="Notifications"
         component={Notifications}
+        options={{ headerShown: false }}
+      />
+      <ProfileStack.Screen
+        name="Documents"
+        component={Documents}
         options={{ headerShown: false }}
       />
     </ProfileStack.Navigator>

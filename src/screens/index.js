@@ -22,8 +22,10 @@ import FuelExpense from "./expense/FuelExpense";
 import Settings from "./profile/Settings";
 import General from "./profile/General";
 import Notifications from "./profile/Notifications";
+import Documents from "./profile/Documents";
 
 export {
+  Documents,
   Notifications,
   Settings,
   General,
