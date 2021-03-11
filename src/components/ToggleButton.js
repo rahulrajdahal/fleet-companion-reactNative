@@ -1,39 +1,31 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { Switch, View } from "react-native";
 import { COLORS } from "../constants";
+// import { Switch, DefaultTheme } from "react-native-paper";
+import { color } from "react-native-reanimated";
 
-const ToggleButton = () => {
+const ToggleButton = ({ style }) => {
   const [active, setActive] = React.useState(false);
 
   return (
-    <TouchableOpacity
+    <View
       style={{
-        width: 60,
-        height: 32,
         backgroundColor: active ? COLORS.success100 : COLORS.primary100,
         borderRadius: 16,
+        width: 60,
+        height: 32,
+        alignItems: "center",
         justifyContent: "center",
+        ...style,
       }}
-      onPress={() => setActive((active) => !active)}
     >
-      <View
-        style={{
-          width: 20,
-          height: 20,
-          backgroundColor: active ? COLORS.success : COLORS.primary400,
-          borderRadius: 16,
-          alignSelf: active ? "flex-end" : "flex-start",
-          marginHorizontal: 4,
-          elevation: 0.3,
-          shadowColor: active
-            ? "rgba(18, 130, 57, 0.3)"
-            : "rgba(134, 151, 167, 0.3)",
-          shadowOffset: 15,
-          shadowRadius: 5,
-          shadowOpacity: 0.3,
-        }}
+      <Switch
+        value={active}
+        trackColor={{ true: COLORS.success100, false: COLORS.primary100 }}
+        thumbColor={active ? COLORS.success : COLORS.primary400}
+        onValueChange={() => setActive((active) => !active)}
       />
-    </TouchableOpacity>
+    </View>
   );
 };
 
