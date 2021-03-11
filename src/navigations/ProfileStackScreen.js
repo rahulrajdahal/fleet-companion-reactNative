@@ -7,6 +7,7 @@ import {
   Profile,
   Settings,
   Documents,
+  DriverDocument,
 } from "../screens";
 
 const ProfileStack = createStackNavigator();
@@ -37,6 +38,11 @@ const ProfileStackScreen = () => {
       <ProfileStack.Screen
         name="Documents"
         component={Documents}
+        options={{ headerShown: false }}
+      />
+      <ProfileStack.Screen
+        name="DriverDocument"
+        component={DriverDocument}
         options={{ headerShown: false }}
       />
     </ProfileStack.Navigator>

@@ -1,10 +1,11 @@
 import React from "react";
 import { FlatList, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { Navbar } from "../../components";
 import { COLORS, FONTS, SIZES } from "../../constants";
 import { Folder } from "../../constants/icons";
 
-const Documents = () => {
+const Documents = ({ navigation }) => {
   function renderTitle() {
     return (
       <View>
@@ -24,14 +25,20 @@ const Documents = () => {
 
   function renderDocuments() {
     const documents = [
-      { _id: 1, title: "Driver Documents", body: "2 files" },
-      { _id: 2, title: "Insurance", body: "1 file" },
-      { _id: 3, title: "Jobs Log", body: "26 files" },
+      {
+        _id: 1,
+        title: "Driver Documents",
+        body: "2 files",
+        navTo: "DriverDocument",
+      },
+      { _id: 2, title: "Insurance", body: "1 file", navTo: "DriverDocument" },
+      { _id: 3, title: "Jobs Log", body: "26 files", navTo: "DriverDocument" },
     ];
 
     const renderItem = ({ item }) => {
       return (
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate("DriverDocument")}
           style={{
             width: 156,
             height: 107,
@@ -67,7 +74,7 @@ const Documents = () => {
           >
             {item.body}
           </Text>
-        </View>
+        </TouchableOpacity>
       );
     };
 

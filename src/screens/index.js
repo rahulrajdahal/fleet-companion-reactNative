@@ -23,8 +23,10 @@ import Settings from "./profile/Settings";
 import General from "./profile/General";
 import Notifications from "./profile/Notifications";
 import Documents from "./profile/Documents";
+import DriverDocument from "./profile/DriverDocument";
 
 export {
+  DriverDocument,
   Documents,
   Notifications,
   Settings,
