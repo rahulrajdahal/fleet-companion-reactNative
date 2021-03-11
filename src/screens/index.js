@@ -6,7 +6,7 @@ import ActiveWork from "./dashboard/ActiveWork";
 import CompletedWork from "./dashboard/CompletedWork";
 import Report from "./report/Report";
 import Expense from "./expense/Expense";
-import Profile from "./Profile";
+import Profile from "./profile/Profile";
 import PageOne from "./dashboard/assessment/PageOne";
 import PageTwo from "./dashboard/assessment/PageTwo";
 import PageThree from "./dashboard/assessment/PageThree";
@@ -19,8 +19,10 @@ import OnWork from "./OnWork";
 import Incident from "./report/Incident";
 import Fault from "./report/Fault";
 import FuelExpense from "./expense/FuelExpense";
+import Settings from "./profile/Settings";
 
 export {
+  Settings,
   FuelExpense,
   Fault,
   Incident,

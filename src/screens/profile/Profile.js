@@ -1,12 +1,13 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { Navbar } from "../components";
-import { COLORS, FONTS } from "../constants";
-import { ArrowRight, Folder, Settings, LifeRing } from "../constants/icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Navbar } from "../../components";
+import { COLORS, FONTS } from "../../constants";
+import { ArrowRight, Folder, Settings, LifeRing } from "../../constants/icons";
 
-import { ProfileImage } from "../constants/images";
+import { ProfileImage } from "../../constants/images";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   function renderProfileDetail() {
     return (
       <View style={{ alignItems: "center", marginTop: 36 }}>
@@ -26,27 +27,31 @@ const Profile = () => {
         title: "My Documents",
         body: "All your important documents in one convenient location.",
         backgroundColor: COLORS.info100,
+        navTo: "Settings",
       },
       {
         _id: 2,
         icon: <Settings />,
-        title: "My Documents",
-        body: "All your important documents in one convenient location.",
+        title: "Settings",
+        body:
+          "Go to Settings in order to change your passwords or notifications",
         backgroundColor: COLORS.success100,
+        navTo: "Settings",
       },
       {
         _id: 3,
         icon: <LifeRing />,
-        title: "My Documents",
-        body: "All your important documents in one convenient location.",
+        title: "Help Center",
+        body: "Access the Help Center for FAQ or contact Support.",
         backgroundColor: COLORS.danger100,
+        navTo: "Settings",
       },
     ];
 
     return (
       <View style={{ marginTop: 57 }}>
         {options.map((option) => (
-          <View
+          <TouchableOpacity
             key={option._id}
             style={{
               flexDirection: "row",
@@ -55,6 +60,7 @@ const Profile = () => {
               justifyContent: "space-between",
               marginBottom: 32,
             }}
+            onPress={() => navigation.navigate(option.navTo)}
           >
             <View
               style={{
@@ -106,7 +112,7 @@ const Profile = () => {
               width={15.56}
               height={16}
             />
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
     );
