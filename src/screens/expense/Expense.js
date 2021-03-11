@@ -1,10 +1,11 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
-import { Navbar } from "../components";
-import { COLORS, FONTS, images } from "../constants";
-import { ArrowRight } from "../constants/icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Navbar } from "../../components";
+import { COLORS, FONTS, images } from "../../constants";
+import { ArrowRight } from "../../constants/icons";
 
-const Expense = () => {
+const Expense = ({ navigation }) => {
   function renderTitle() {
     return (
       <View>
@@ -56,7 +57,8 @@ const Expense = () => {
             Record Fuel Expense
           </Text>
         </View>
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate("FuelExpense")}
           style={{
             width: 40,
             height: 40,
@@ -68,7 +70,7 @@ const Expense = () => {
           }}
         >
           <ArrowRight />
-        </View>
+        </TouchableOpacity>
       </View>
     );
   }
