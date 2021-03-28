@@ -2,7 +2,6 @@ import React from "react";
 import { Text, View } from "react-native";
 import { ChoiceButton, DashboardHeader } from "../../../components";
 import { FONTS, COLORS } from "../../../constants";
-import { Check } from "../../../constants/icons";
 
 const PageOne = ({ navigation }) => {
   function renderHeading() {

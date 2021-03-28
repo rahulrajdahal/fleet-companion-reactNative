@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, Image } from "react-native";
-import { COLORS, images, SIZES } from "../constants";
+import { COLORS, SIZES } from "../constants";
 
 const AddButton = ({ text, image, style }) => {
   return (

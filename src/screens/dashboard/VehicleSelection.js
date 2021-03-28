@@ -10,8 +10,7 @@ import {
 import { Picker } from "@react-native-community/picker";
 import { COLORS, SIZES, FONTS, images } from "../../constants";
 import { DashboardHeader, LargeButton } from "../../components";
-import { Logo, Menu, Chat, Plus, ModalClose } from "../../constants/icons";
-import { VehicleChecklist } from "..";
+import { ModalClose } from "../../constants/icons";
 
 const VehicleSelection = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = React.useState("Ford Pickup ‘85");

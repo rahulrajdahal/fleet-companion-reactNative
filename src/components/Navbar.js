@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { COLORS } from "../constants";
 import { Chat, Logo, Menu } from "../constants/icons";
 

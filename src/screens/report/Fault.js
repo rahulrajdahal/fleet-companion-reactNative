@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import { DashboardHeader, Input, LargeButton, Navbar } from "../../components";
+import { Input, LargeButton, Navbar } from "../../components";
 import { COLORS, FONTS, images, SIZES } from "../../constants";
 
 const Fault = () => {

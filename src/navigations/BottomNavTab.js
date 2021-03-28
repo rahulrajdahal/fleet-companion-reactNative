@@ -1,7 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Dashboard, Expense, OnWork, Profile, Report } from "../screens";
-import { COLORS, FONTS } from "../constants";
+import { COLORS } from "../constants";
 import {
   DashboardIcon,
   ReportIcon,

@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { View, Text, TextInput } from "react-native";
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, SIZES } from "../constants";
 import { useForm } from "react-hook-form";
 
 const Input = ({ text, placeholder, style, inputStyle }) => {
-  const { handleSubmit, register, errors, setValue } = useForm();
-  const onSubmit = (values) => console.log(values);
+  const { register, setValue } = useForm();
 
   useEffect(() => {
     register({ placeholder });

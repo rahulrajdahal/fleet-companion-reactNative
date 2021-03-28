@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import { View, Text, TextInput, SafeAreaView } from "react-native";
-import { COLORS, FONTS, SIZES } from "../../constants";
+import React from "react";
+import { View, Text } from "react-native";
+import { COLORS, FONTS } from "../../constants";
 import { Logo } from "../../constants/icons";
-import { useForm } from "react-hook-form";
 import { Input, LargeButton } from "../../components";
 
 const Login = ({ navigation }) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ScrollView, Text, TextInput, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 import { Input, LargeButton, Navbar, RadioButton } from "../../components";
 import { COLORS, FONTS, images, SIZES } from "../../constants";
 

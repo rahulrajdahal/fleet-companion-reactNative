@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants";
-import { Plus, AddCircle, AddCircleActive } from "../constants/icons";
+import { AddCircle, AddCircleActive } from "../constants/icons";
 
 const Accordion = ({ title, body }) => {
   const [expanded, setExpanded] = React.useState(false);

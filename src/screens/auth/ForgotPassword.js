@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, View, Text } from "react-native";
+import { View, Text } from "react-native";
 import { Input, LargeButton } from "../../components";
 import { COLORS, FONTS, SIZES } from "../../constants";
 import { Logo } from "../../constants/icons";

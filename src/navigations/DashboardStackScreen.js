@@ -10,10 +10,7 @@ import {
   ConfirmChecklist,
   SignatureScreen,
   WorkDetails,
-  OnWork,
 } from "../screens";
-import { COLORS, FONTS } from "../constants";
-import { View, Text } from "react-native";
 
 const DashboardStack = createStackNavigator();
 

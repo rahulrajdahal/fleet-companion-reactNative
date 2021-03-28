@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import { DashboardHeader, LargeButton } from "../../components";
-import { COLORS, images, SIZES } from "../../constants";
+import { COLORS, images } from "../../constants";
 import { Check } from "../../constants/icons";
 
 const ConfirmChecklist = ({ navigation }) => {

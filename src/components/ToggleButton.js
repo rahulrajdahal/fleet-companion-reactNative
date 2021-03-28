@@ -1,8 +1,6 @@
 import React from "react";
 import { Switch, View } from "react-native";
 import { COLORS } from "../constants";
-// import { Switch, DefaultTheme } from "react-native-paper";
-import { color } from "react-native-reanimated";
 
 const ToggleButton = ({ style }) => {
   const [active, setActive] = React.useState(false);

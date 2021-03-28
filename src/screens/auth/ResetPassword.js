@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { Input, LargeButton } from "../../components";
-import { COLORS, SIZES, FONTS } from "../../constants";
+import { COLORS, FONTS } from "../../constants";
 import { Logo } from "../../constants/icons";
 
 const ResetPassword = ({ navigation }) => {

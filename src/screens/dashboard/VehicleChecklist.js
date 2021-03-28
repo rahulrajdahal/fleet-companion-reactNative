@@ -1,18 +1,7 @@
 import React from "react";
-import {
-  SafeAreaView,
-  Image,
-  TouchableOpacity,
-  Text,
-  View,
-  StyleSheet,
-  Animated,
-  Pressable,
-  ScrollView,
-} from "react-native";
+import { Image, Text, View, Animated, ScrollView } from "react-native";
 import { AddButton, ChoiceButton, DashboardHeader } from "../../components";
 import { COLORS, FONTS, images, SIZES } from "../../constants";
-import { ArrowLeft } from "../../constants/icons";
 import { useNavigation } from "@react-navigation/native";
 
 const VehicleChecklist = () => {
@@ -311,7 +300,7 @@ const VehicleChecklist = () => {
 
       function nextPage() {
         let node = scrollViewref.current;
-        
+
         if (index == 0) {
           return node.scrollTo({ x: 327, y: 0 });
         } else if (index == 1) {
