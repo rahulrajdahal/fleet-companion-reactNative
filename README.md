@@ -3,16 +3,16 @@
 
 <img src="./screenshots/login.jpg?raw=true" width="500" height="800">
 <img src="/screenshots/forgotPassword.jpg?raw=true" width="500" height="800">
-<img src="/screenshots/forgotPassword.jpg?raw=true" width="500" height="800">
+<img src="/screenshots/resetPassword.jpg?raw=true" width="500" height="800">
+<img src="/screenshots/dashboard.jpg?raw=true" width="500" height="800">
+<img src="/screenshots/dashboard2.jpg?raw=true" width="500" height="800">
+<img src="/screenshots/dashboardCompleted.jpg?raw=true" width="500" height="800">
+<img src="/screenshots/createWork.jpg?raw=true" width="500" height="800">
+<img src="/screenshots/regNumber.jpg?raw=true" width="500" height="800">
+<img src="/screenshots/vehicleChecklist.jpg?raw=true" width="500" height="800">
 
-![Alt text](/screenshots/forgotPassword.jpg?raw=true" "Login")
-![Alt text](/screenshots/resetPassword.jpg?raw=true "Login")
-![Alt text](/screenshots/dashboard.jpg?raw=true "Login")
-![Alt text](/screenshots/dashboard2.jpg?raw=true "Login")
-![Alt text](/screenshots/dashboardCompleted.jpg?raw=true "Login")
-![Alt text](/screenshots/createWork.jpg?raw=true "Login")
-![Alt text](/screenshots/regNumber.jpg?raw=true "Login")
-![Alt text](/screenshots/vehicleChecklist.jpg?raw=true "Login")
+
+
 ![Alt text](/screenshots/vehicleChecklist2.jpg?raw=true "Login")
 ![Alt text](/screenshots/vehicleChecklist3.jpg?raw=true "Login")
 ![Alt text](/screenshots/vehicleChecklist4.jpg?raw=true "Login")
