@@ -1,7 +1,7 @@
 # fleet-companion-reactNative
 
 ![Alt text](/screenshots/login.jpg?raw=true "Login")
-<img src="./screenshots/login.jpg?raw=true" width="100" height="100">
+<img src="./screenshots/login.jpg?raw=true" width="500" height="300">
 ![Alt text](/screenshots/forgotPassword.jpg?raw=true "Login")
 ![Alt text](/screenshots/resetPassword.jpg?raw=true "Login")
 ![Alt text](/screenshots/dashboard.jpg?raw=true "Login")
