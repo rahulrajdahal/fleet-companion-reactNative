@@ -1,7 +1,8 @@
 # fleet-companion-reactNative
 
 
-<img src="./screenshots/login.jpg?raw=true" width="300" height="600"><img src="./screenshots/forgotPassword.jpg?raw=true" width="300" height="600">
+<img src="./screenshots/login.jpg?raw=true" width="300" height="600">
+<img src="./screenshots/forgotPassword.jpg?raw=true" width="300" height="600">
 <img src="/screenshots/resetPassword.jpg?raw=true" width="300" height="600">
 <img src="/screenshots/dashboard.jpg?raw=true" width="300" height="600">
 <img src="/screenshots/dashboard2.jpg?raw=true" width="300" height="600">
@@ -25,13 +26,12 @@
 <img src="/screenshots/createFault.jpg?raw=true" width="300" height="600">
 <img src="/screenshots/incident.jpg?raw=true" width="300" height="600">
 <img src="/screenshots/incident2.jpg?raw=true" width="300" height="600">
-
-![Alt text](/screenshots/expenses.jpg?raw=true "Login")
-![Alt text](/screenshots/fuelExpense.jpg?raw=true "Login")
-![Alt text](/screenshots/profile.jpg?raw=true "Login")
-![Alt text](/screenshots/documents.jpg?raw=true "Login")
-![Alt text](/screenshots/driverDocs.jpg?raw=true "Login")
-![Alt text](/screenshots/settings.jpg?raw=true "Login")
-![Alt text](/screenshots/notificationSettings.jpg?raw=true "Login")
-![Alt text](/screenshots/helpCenter.jpg?raw=true "Login")
-![Alt text](/screenshots/helpCenter2.jpg?raw=true "Login")
+<img src="/screenshots/expenses.jpg?raw=true" width="300" height="600">
+<img src="/screenshots/fuelExpense.jpg?raw=true" width="300" height="600">
+<img src="/screenshots/profile.jpg?raw=true" width="300" height="600">
+<img src="/screenshots/documents.jpg?raw=true" width="300" height="600">
+<img src="/screenshots/driverDocs.jpg?raw=true" width="300" height="600">
+<img src="/screenshots/settings.jpg?raw=true" width="300" height="600">
+<img src="/screenshots/notificationSettings.jpg?raw=true" width="300" height="600">
+<img src="/screenshots/helpCenter.jpg?raw=true" width="300" height="600">
+<img src="/screenshots/helpCenter2.jpg?raw=true" width="300" height="600">
