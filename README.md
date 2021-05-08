@@ -1,7 +1,7 @@
 # fleet-companion-reactNative
 
 
-<img src="./screenshots/login.jpg?raw=true" width="300" height="600"> <img src="./screenshots/forgotPassword.jpg?raw=true" width="300" height="600">
+<img src="./screenshots/login.jpg?raw=true" width="300" height="500"> <img src="./screenshots/forgotPassword.jpg?raw=true" width="300" height="500">
 <img src="/screenshots/resetPassword.jpg?raw=true" width="300" height="600">
 <img src="/screenshots/dashboard.jpg?raw=true" width="300" height="600">
 <img src="/screenshots/dashboard2.jpg?raw=true" width="300" height="600">
